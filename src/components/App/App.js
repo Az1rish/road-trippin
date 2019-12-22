@@ -14,9 +14,9 @@ export default class App extends Component {
   render() {
     return (
       <div className='App'>
-        <nav className='App__navBar'>
+        <header className='App__navBar'>
           <Nav />
-        </nav>
+        </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
           <Switch>
