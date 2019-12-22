@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import HomePage from '../../routes/Homepage/HomePage'
 
 export default class App extends Component {
@@ -20,10 +21,14 @@ export default class App extends Component {
         <main className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
           <Switch>
-            <Route
+            <PublicOnlyRoute
               exact
               path={'/'}
               component={HomePage}
+            />
+            <PublicOnlyRoute
+              path={'/login'}
+              component={LoginPage}
             />
           </Switch>
         </main>
