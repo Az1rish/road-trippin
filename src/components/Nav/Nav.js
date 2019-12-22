@@ -15,7 +15,7 @@ export default class Nav extends Component {
                     ?   <Link
                             to='/account/:AccountID'>
                             Road Trippin'
-                        </Link>}
+                        </Link>
                     :   <Link
                             to='/'>
                             Road Trippin'

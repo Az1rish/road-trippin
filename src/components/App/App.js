@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
-import HomePage from '../../routes/Homepage'
+import HomePage from '../../routes/Homepage/HomePage'
 
 export default class App extends Component {
   state = { hasError: false }
