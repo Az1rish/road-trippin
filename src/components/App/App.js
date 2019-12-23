@@ -6,6 +6,12 @@ import PrivateRoute from '../Utils/PrivateRoute'
 import HomePage from '../../routes/Homepage/HomePage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import AccountPage from '../../routes/AccountPage/AccountPage'
+import MyPhotosPage from '../../routes/MyPhotosPage/MyPhotosPage'
+import PhotoPage from '../../routes/PhotoPage/PhotoPage'
+import UploadPage from '../../routes/UploadPage/UploadPage'
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import './App.css'
 
 export default class App extends Component {
   state = { hasError: false }
