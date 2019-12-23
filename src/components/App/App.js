@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import HomePage from '../../routes/Homepage/HomePage'
+import LoginPage from '../../routes/LoginPage/LoginPage'
 
 export default class App extends Component {
   state = { hasError: false }
@@ -29,6 +30,10 @@ export default class App extends Component {
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
+            />
+            <PublicOnlyRoute
+              path={'/register'}
+              component={RegistrationPage}
             />
           </Switch>
         </main>
