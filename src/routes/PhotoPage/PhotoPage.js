@@ -1,3 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PhotoContext from '../../contexts/'
+import PhotoContext from '../../contexts/PhotoContext'
+import PhotoApiService from '../../services/photo-api-service'
+import { Hyph, Section } from '../../components/Utils/Utils'
+import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating'
+import CommentForm from ''
