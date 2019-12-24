@@ -5,7 +5,7 @@ import PhotoApiService from '../../services/photo-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating'
 import CommentForm from '../../components/CommentForm/CommentForm'
-import './CommentForm.css'
+import './PhotoPage.css'
 
 export default class PhotoPage extends Component {
     static defaultProps = {

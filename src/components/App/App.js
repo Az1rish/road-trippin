@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import PrivateRoute from '../Utils/PrivateRoute'
 import HomePage from '../../routes/Homepage/HomePage'
@@ -64,6 +65,7 @@ export default class App extends Component {
             />
           </Switch>
         </main>
+        <Footer />
       </div>
     )
   }

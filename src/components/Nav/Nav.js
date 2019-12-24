@@ -10,7 +10,7 @@ export default class Nav extends Component {
 
     renderTitleLink() {
         return (
-            <div className='Nav__title-link'>
+            <div className='Header__title-link'>
                 {TokenService.hasAuthToken()
                     ?   <Link
                             to='/account/:AccountID'>
