@@ -60,6 +60,14 @@ export default class PhotoPage extends Component {
     }
 }
 
+function PhotoContent ({ photo }) {
+    return (
+        <p className='PhotoPage__content'>
+            {photo.content}
+        </p>
+    )
+}
+
 function PhotoComments({ comments = [] }) {
     return (
         <ul className='PhotoPage__comment-list'>
