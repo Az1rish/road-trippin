@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Section } from '../../components/Utils/Utils'
-import LoginForm from '../../components/LoginForm/LoginForm'
 import './HomePage.css'
+import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
 export default class HomePage extends Component {
     renderCards() {
@@ -20,14 +20,18 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='homePage'>
                 <h2>Helping everyone see the world</h2>
                 <div className="cards">
                     {this.renderCards()}
                 </div>
-                <LoginForm
-                    className='homePageLogin'
-                />
+                <ButtonLink
+                    to='/login'
+                    name='Log in!' />
+                <p>Not yet a member?</p>
+                <ButtonLink
+                    to='/register'
+                    name="Create an account" />
             </div>
         ) 
     }
