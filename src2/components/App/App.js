@@ -44,8 +44,8 @@ export default class App extends Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            <PublicOnlyRoute
-              path={'/account'}
+            <PrivateRoute
+              path={'/account/:accountId'}
               component={AccountPage}
             />
             <PrivateRoute

@@ -4,12 +4,19 @@ import PhotoApiService from '../../services/photo-api-service'
 import { Section } from '../../components/Utils/Utils'
 import Photo from '../../components/Photo/Photo'
 import './AccountPage.css'
-import photoList from '../../store'
 
 export default class AccountPage extends Component {
-    
+    static contextType = PhotoListContext
+
+    componentDidMount() {
+        this.context.clearError()
+        PhotoApiService.getPhotos()
+            .then(this.context.setPhotoList)
+            .catch(this.context.setError)
+    }
 
     renderPhotos() {
+        const { photoList = [] } = this.context
         return photoList.map(photo =>
             <Photo
                 key={photo.id}
