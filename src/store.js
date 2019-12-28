@@ -2,10 +2,20 @@ const photoList = [
     {
         id: 1,
         image: "https://images.freeimages.com/images/large-previews/6b3/jetty-at-lysterfield-lake-1640074.jpg",
-        title: "Lysterfiedld Lake",
+        title: "Lysterfield Lake",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 4,
         average_comment_rating: 3.2,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 2,
@@ -14,6 +24,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 5,
         average_comment_rating: 4.7,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 3,
@@ -22,6 +42,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 3,
         average_comment_rating: 3.6,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 4,
@@ -30,6 +60,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 6,
         average_comment_rating: 4,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 5,
@@ -38,6 +78,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 4,
         average_comment_rating: 3.8,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 6,
@@ -46,6 +96,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 4,
         average_comment_rating: 3.7,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 7,
@@ -54,6 +114,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 2,
         average_comment_rating:3.5,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     },
     {
         id: 8,
@@ -62,6 +132,16 @@ const photoList = [
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         number_of_comments: 7,
         average_comment_rating: 4.3,
+        comments: [
+            {
+                id: 1,
+                text:"Lorem ipsum comments...",
+                rating: 4,
+                user: {
+                    full_name: "Rick Sanchez",
+                },
+            },
+        ],
     }
 ]
 

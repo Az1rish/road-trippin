@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Input, Required } from '../Utils/Utils'
+import { Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
+import ButtonLink from '../ButtonLink/ButtonLink'
 
 export default class RegistrationForm extends Component {
     static defaultProps = {
@@ -73,9 +74,11 @@ export default class RegistrationForm extends Component {
                         id='RegistrationForm__password'>
                     </Input>
                 </div>
-                <Button type='submit'>
+                <ButtonLink
+                    to='/login'
+                    name='register'>
                     Register
-                </Button>
+                </ButtonLink>
             </form>
         )
     }

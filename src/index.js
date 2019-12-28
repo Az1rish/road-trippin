@@ -9,9 +9,16 @@ import App from './components/App/App'
 
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons"
 
-import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons'
+import { 
+    faStar as fasStar,
+    faQuoteLeft
+} from '@fortawesome/free-solid-svg-icons'
 
-library.add(farStar, fasStar)
+library.add(
+    farStar,
+    fasStar,
+    faQuoteLeft,
+)
 
 ReactDOM.render(
     <BrowserRouter>

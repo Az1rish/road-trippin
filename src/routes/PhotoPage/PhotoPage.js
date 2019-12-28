@@ -1,47 +1,37 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PhotoContext from '../../contexts/PhotoContext'
-import PhotoApiService from '../../services/photo-api-service'
+// import PhotoContext from '../../contexts/PhotoContext'
+// import PhotoApiService from '../../services/photo-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating'
 import CommentForm from '../../components/CommentForm/CommentForm'
 import './PhotoPage.css'
+import photoList from '../../store'
 
 export default class PhotoPage extends Component {
     static defaultProps = {
         match: { params: {} },
     }
 
-    static contextType = PhotoContext
-
-    componentDidMount() {
-        const { photoId } = this.props.match.params
-        this.context.clearError()
-        PhotoApiService.getPhoto(photoId)
-            .then(this.context.setPhoto)
-            .catch(this.context.setError)
-        PhotoApiService.getPhotoComments(photoId)
-            .then(this.context.setComments)
-            .catch(this.context.setError)
-    }
-
-    componentWillUnmount() {
-        this.context.clearPhoto()
-    }
+    
 
     renderPhoto() {
-        const { photo, comments } = this.context
+        const { photoId } = this.props.match.params
+        const photo = photoList[photoId-1]
         return <>
             <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
             <h2>{photo.title}</h2>
             <PhotoContent photo={photo} />
-            <PhotoComments comments={comments} />
+            <PhotoComments comments={photo.comments} />
             <CommentForm />
         </>
     }
 
     render() {
-        const { error, photo } = this.context
+        // console.log(this.props)
+        const { error } = this.props
+        const { photoId } = this.props.match.params
+        const photo = photoList[photoId-1]
         let content
         if (error) {
             content = (error.error === `Photo doesn't exist`)

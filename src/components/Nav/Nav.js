@@ -12,11 +12,25 @@ export default class Nav extends Component {
         return (
             <div className='Header__title-link'>
                 {TokenService.hasAuthToken()
-                    ?   <Link
-                            to='/account/:AccountID'>
+                    ?   <>
+                        <Link
+                            className='homeLink'
+                            to='/account/:AccountId'>
                             Road Trippin'
                         </Link>
+                        <Link
+                            className='myPhotosLink'
+                            to='/myPhotos'>
+                                My Photos
+                        </Link>
+                        <Link
+                            className='logoutLink'
+                            to='/'>
+                                Log Out
+                        </Link>
+                        </>
                     :   <Link
+                            className='homeLink'
                             to='/'>
                             Road Trippin'
                         </Link>
