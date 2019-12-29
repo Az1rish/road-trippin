@@ -1,0 +1,15 @@
+.AccountButtons {
+    text-align: right;
+    margin-top: -13px;
+    margin-bottom: 13px;
+    
+}
+  
+.AccountButtons * {
+    padding: 7px;
+    border: solid black 1px;
+    margin: 2px;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+    border-top: none;
+}

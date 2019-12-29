@@ -27,11 +27,15 @@ export default class HomePage extends Component {
                 </div>
                 <ButtonLink
                     to='/login'
-                    name='Log in!' />
+                    className='homeButtons'>
+                        Log in!
+                </ButtonLink>
                 <p>Not yet a member?</p>
                 <ButtonLink
                     to='/register'
-                    name="Create an account" />
+                    className='homeButtons'>
+                        Create an account
+                </ButtonLink>
             </div>
         ) 
     }

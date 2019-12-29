@@ -5,7 +5,7 @@ import { Section } from '../../components/Utils/Utils'
 import Photo from '../../components/Photo/Photo'
 import './AccountPage.css'
 import photoList from '../../store'
-import ButtonLink from '../../components/ButtonLink/ButtonLink'
+import AccountButtons from '../../components/AccountButtons/AccountButtons'
 
 export default class AccountPage extends Component {
     renderPhotos() {
@@ -19,21 +19,14 @@ export default class AccountPage extends Component {
     render() {
         const { error } = this.context
         return (
-            <Section list className='AccountPage'>
-                <ButtonLink
-                    to='/myPhotos'
-                    className='myPhotosButton'>
-                        My Photos
-                </ButtonLink>
-                <ButtonLink
-                    to='/'
-                    className='logoutButton'>
-                        Log Out
-                </ButtonLink>
-                {error
-                    ? <p className='red'>There was an error, try again</p>
-                    : this.renderPhotos()}
-            </Section>
+            <>
+                <AccountButtons />
+                <Section list className='AccountPage'>
+                    {error
+                        ? <p className='red'>There was an error, try again</p>
+                        : this.renderPhotos()}
+                </Section>
+            </>
         )
     }
 }

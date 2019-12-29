@@ -13,8 +13,20 @@
     height: 200px;
     width: 42%;
     margin: 2%;
+    border-radius: 70px;
 }
 
 .homePage {
     margin: 50px 5px;
+}
+
+.homeButtons {
+    margin: 15px 10%;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 6px;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
 }

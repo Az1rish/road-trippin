@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     background-color: #5784FF;
+    border-bottom: solid black 1px;
   }
   
   .Header h1 {

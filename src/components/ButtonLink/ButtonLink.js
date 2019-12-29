@@ -6,7 +6,7 @@ export default function ButtonLink(props) {
     return (
         <Link
             to={props.to}>
-                {props.name}
+                {props.children}
             </Link>
     )
 }
