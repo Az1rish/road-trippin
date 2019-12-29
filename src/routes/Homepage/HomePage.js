@@ -26,14 +26,14 @@ export default class HomePage extends Component {
                     {this.renderCards()}
                 </div>
                 <ButtonLink
-                    to='/login'
-                    className='homeButtons'>
+                    className='homeButtons'
+                    to='/login'>
                         Log in!
                 </ButtonLink>
                 <p>Not yet a member?</p>
                 <ButtonLink
-                    to='/register'
-                    className='homeButtons'>
+                    className='homeButtons'
+                    to='/register'>
                         Create an account
                 </ButtonLink>
             </div>
