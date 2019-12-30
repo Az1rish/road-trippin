@@ -11,8 +11,10 @@ export default class HomePage extends Component {
             "Join the discussion with the Road Trippin' community",
             "Decide which wonderful place you want to visit!"
         ]
-        return cards.map(card =>
-            <Section className="card">
+        return cards.map((card, i) =>
+            <Section 
+                className="card"
+                key={i}>
                 <p>{card}</p>
             </Section> 
         )

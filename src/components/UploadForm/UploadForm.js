@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
 import ButtonLink from '../ButtonLink/ButtonLink'
+import './UploadForm.css'
 
 export default class UploadForm extends Component {
     static defaultProps = {

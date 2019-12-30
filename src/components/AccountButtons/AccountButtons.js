@@ -13,6 +13,11 @@ export default class AccountButtons extends Component {
                         My Photos
                 </ButtonLink>
                 <ButtonLink
+                    to='/upload'
+                    className='uploadButton'>
+                        Add Photo
+                </ButtonLink>
+                <ButtonLink
                     to='/'
                     className='logoutButton'>
                         Log Out
