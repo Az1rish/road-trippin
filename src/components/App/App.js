@@ -45,19 +45,19 @@ export default class App extends Component {
               component={RegistrationPage}
             />
             <PrivateRoute
-              path={'/account/:accountId'}
+              path={'/validUser'}
               component={AccountPage}
             />
             <PrivateRoute
-              path={'/account/:accountId/myPhotos'}
+              path={'/myPhotos'}
               component={MyPhotosPage}
             />
             <PrivateRoute
-              path={'/account/:accountId/photo/:photoId'}
+              path={'/photo/:photoId'}
               component={PhotoPage}
             />
             <PrivateRoute
-              path={'/account/:accountId/upload'}
+              path={'/upload'}
               component={UploadPage}
             />
             <Route

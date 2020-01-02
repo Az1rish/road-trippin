@@ -13,7 +13,7 @@ export default class Nav extends Component {
             <div className='Header__title-link'>
                 {TokenService.hasAuthToken()
                     ?   <Link
-                            to='/account/:accountId'>
+                            to='/validUser'>
                             Road Trippin'
                         </Link>
                     :   <Link
@@ -29,7 +29,7 @@ export default class Nav extends Component {
         return (
             <div className='Header__logged-in'>
                 <Link
-                    to='/account/:accountId/myPhotos'>
+                    to='/myPhotos'>
                     My Photos
                 </Link>
                 <Link
