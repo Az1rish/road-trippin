@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
-// import PrivateRoute from '../Utils/PrivateRoute'
+import PrivateRoute from '../Utils/PrivateRoute'
 import HomePage from '../../routes/Homepage/HomePage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
@@ -44,20 +44,20 @@ export default class App extends Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            <PublicOnlyRoute
-              path={'/account'}
+            <PrivateRoute
+              path={'/account/:accountId'}
               component={AccountPage}
             />
-            <PublicOnlyRoute
-              path={'/myPhotos'}
+            <PrivateRoute
+              path={'/account/:accountId/myPhotos'}
               component={MyPhotosPage}
             />
-            <PublicOnlyRoute
-              path={'/photo/:photoId'}
+            <PrivateRoute
+              path={'/account/:accountId/photo/:photoId'}
               component={PhotoPage}
             />
-            <PublicOnlyRoute
-              path={'/upload'}
+            <PrivateRoute
+              path={'/account/:accountId/upload'}
               component={UploadPage}
             />
             <Route
