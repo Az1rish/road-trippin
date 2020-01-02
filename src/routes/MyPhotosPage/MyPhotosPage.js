@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
-// import PhotoListContext from '../../contexts/PhotoListContext'
-// import PhotoApiService from '../../services/photo-api-service'
+import PhotoListContext from '../../contexts/PhotoListContext'
+import PhotoApiService from '../../services/photo-api-service'
 import { Section } from '../../components/Utils/Utils'
 import Photo from '../../components/Photo/Photo'
 import './MyPhotosPage.css'
-import photoList from '../../store'
+// import photoList from '../../store'
 import AccountButtons from '../../components/AccountButtons/AccountButtons'
 
-export default class AccountPage extends Component {
+export default class MyPhotosPage extends Component {
+    static contextType = PhotoListContext
+
+    componentDidMount() {
+        this.context.clearError()
+        PhotoApiService.getPhotos()
+            .then(this.context.setPhotoList)
+            .catch(this.context.setError)
+    }
+
     renderPhotos() {
+        const { photoList = [] } = this.context
         return photoList.map(photo =>
                 <Photo
                     key={photo.id}
@@ -21,7 +31,7 @@ export default class AccountPage extends Component {
         return (
             <>
                 <AccountButtons />
-                <Section list className='AccountPage'>
+                <Section list className='MyPhotosPage'>
                     {error
                         ? <p className='red'>There was an error, try again</p>
                         : this.renderPhotos()}
