@@ -35,6 +35,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 275px;
+    background-color: #a3bcff;
   }
   
   .Photo__details h2 {
@@ -51,4 +52,8 @@
     display: block;
     text-align: center;
     opacity: 0.5;
+  }
+
+  .Photo__text * {
+    color: #222;
   }

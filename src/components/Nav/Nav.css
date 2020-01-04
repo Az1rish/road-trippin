@@ -42,26 +42,20 @@
     margin-top: 10px;
   }
   
-  .Header__not-logged-in {
+  .Header__not-logged-in, .Header__logged-in {
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: flex-end;
   }
   
-  .Header__not-logged-in a {
+  .Header__not-logged-in a, .Header__logged-in a {
     background:#525e80;
     color: white;
     padding: 5px 15px;
     border-radius: 15px;
     margin-left: 5px;
     margin-right: 5px;
-  }
-  
-  .Header__logged-in a {
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    padding: 5px 15px;
-    border-radius: 15px;
   }
   
   @media screen and (min-width: 450px) {
