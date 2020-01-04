@@ -9,7 +9,7 @@
 .card {
     min-height: 200px;
     padding: 6% 0;
-    background-color: #A3BCFF;
+    background-color: #4569cc;
     height: 200px;
     width: 42%;
     margin: 2%;
@@ -21,14 +21,11 @@
 }
 
 .homePage a {
-    margin: 15px 10%;
+    background:#525e80;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-decoration: none;
-    border-radius: 10px;
-    padding: 10px;
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-right: 1px solid #333;
-    border-bottom: 1px solid #333;
-    background-color: #7f9cee;
-    color: black;
 }

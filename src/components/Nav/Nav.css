@@ -9,11 +9,19 @@
     left: 0;
     top: 0;
     width: 100%;
+    flex-direction: column;
+  }
+
+  .Header__buttons {
+    display: flex;
+    justify-content: right;
+    width: 100%;
   }
   
   .Header h1 {
     margin: 0;
     vertical-align: middle;
+    width: 100%;
   }
   
   .Header a {
@@ -41,12 +49,13 @@
     justify-content: flex-end;
   }
   
-  .Header__not-logged-in a:last-child {
-    background: rgb(255, 121, 121);
+  .Header__not-logged-in a {
+    background:#525e80;
     color: white;
     padding: 5px 15px;
     border-radius: 15px;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
   .Header__logged-in a {
