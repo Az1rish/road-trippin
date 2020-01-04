@@ -28,7 +28,6 @@ export default class AccountPage extends Component {
 
     render() {
         const { error } = this.context
-        console.log(this.context)
         return (
             <>
                 {/* <AccountButtons /> */}

@@ -6,6 +6,7 @@ import './Nav.css'
 export default class Nav extends Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        TokenService.hasAuthToken()
     }
 
     renderTitleLink() {
@@ -25,6 +26,21 @@ export default class Nav extends Component {
         )
     }
 
+    renderLoginLink() {
+        return (
+            <div className='Header__not-logged-in'>
+                <Link
+                    to='/register'>
+                    Register
+                </Link>
+                <Link
+                    to='/login'>
+                    Log in
+                </Link>
+            </div>
+        )
+    }
+
     renderLogoutLink() {
         return (
             <div className='Header__logged-in'>
@@ -35,21 +51,24 @@ export default class Nav extends Component {
                 <Link
                     onClick={this.handleLogoutClick}
                     to='/'>
-                    Logout
+                    Log Out
                 </Link>
             </div>
         )
     }
 
     render() {
+        console.log(TokenService.hasAuthToken())
         return <>
             <nav className='Header'>
                 <h1>
                     {this.renderTitleLink()}
                 </h1>
-                {TokenService.hasAuthToken()
+                <div className='Header__buttons'>
+                    {TokenService.hasAuthToken()
                     ? this.renderLogoutLink()
-                    : null}
+                    : this.renderLoginLink()}
+                </div>
             </nav>
         </>
     }
