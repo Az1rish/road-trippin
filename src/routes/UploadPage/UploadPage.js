@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Section } from '../../components/Utils/Utils'
 import UploadForm from '../../components/UploadForm/UploadForm'
-
+import './UploadPage.css'
 
 export default class UploadPage extends Component {
     render() {

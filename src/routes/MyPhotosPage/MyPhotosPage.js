@@ -5,7 +5,7 @@ import { Section } from '../../components/Utils/Utils'
 import Photo from '../../components/Photo/Photo'
 import './MyPhotosPage.css'
 // import photoList from '../../store'
-import AccountButtons from '../../components/AccountButtons/AccountButtons'
+// import AccountButtons from '../../components/AccountButtons/AccountButtons'
 
 export default class MyPhotosPage extends Component {
     static contextType = PhotoListContext
@@ -30,7 +30,7 @@ export default class MyPhotosPage extends Component {
         const { error } = this.context
         return (
             <>
-                <AccountButtons />
+                {/* <AccountButtons /> */}
                 <Section list className='MyPhotosPage'>
                     {error
                         ? <p className='red'>There was an error, try again</p>

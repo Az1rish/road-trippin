@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Input, Required } from '../Utils/Utils'
+import { Input, Required, Button } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
-import ButtonLink from '../ButtonLink/ButtonLink'
+// import ButtonLink from '../ButtonLink/ButtonLink'
 import './UploadForm.css'
 
 export default class UploadForm extends Component {
@@ -73,11 +73,10 @@ export default class UploadForm extends Component {
                         id='UploadForm__description'>
                     </Input>
                 </div>
-                <ButtonLink
-                    to='/account'
-                    name='upload'>
+                <Button
+                    type='submit'>
                     Add Photo
-                </ButtonLink>
+                </Button>
             </form>
         )
     }

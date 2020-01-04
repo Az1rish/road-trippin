@@ -45,6 +45,10 @@ export default class Nav extends Component {
         return (
             <div className='Header__logged-in'>
                 <Link
+                    to='/upload'>
+                    Add Photo
+                </Link>
+                <Link
                     to='/myPhotos'>
                     My Photos
                 </Link>
