@@ -10,6 +10,8 @@
     top: 0;
     width: 100%;
     flex-direction: column;
+    z-index: 99
+    ;
   }
 
   .Header__buttons {

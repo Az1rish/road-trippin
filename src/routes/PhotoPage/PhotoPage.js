@@ -5,7 +5,7 @@ import PhotoApiService from '../../services/photo-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating'
 import CommentForm from '../../components/CommentForm/CommentForm'
-import AccountButtons from '../../components/AccountButtons/AccountButtons'
+// import AccountButtons from '../../components/AccountButtons/AccountButtons'
 import './PhotoPage.css'
 // import photoList from '../../store'
 
@@ -56,7 +56,7 @@ export default class PhotoPage extends Component {
         }
         return (
             <>
-            <AccountButtons />
+            {/* <AccountButtons /> */}
             <Section className='PhotoPage'>
                 {content}
             </Section>
