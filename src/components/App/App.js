@@ -16,19 +16,8 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import './App.css'
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-    hasError: false,
-    logged: false
-  };
-    this.handleLogChange = this.handleLogChange.bind(this);
-  }
-
-  handleLogChange() {
-    this.setState({
-      logged: !this.state.logged
-    })
+  state = {
+    hasError: false
   }
 
   static getDerivedStateFromError(error) {
@@ -40,8 +29,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <header className='App__navBar'>
-          <Nav 
-            handleLogChange={this.handleLogChange}/>
+          <Nav />
         </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}

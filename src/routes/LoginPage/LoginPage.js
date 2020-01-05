@@ -15,9 +15,9 @@ export default class LoginPage extends Component {
         const { location, history } = this.props
         const destination = (location.state || {}).from || '/validUser'
 
-        console.log(`props are ${this.props}
-            location.state is ${location.state}
-            destination is ${destination}`)
+        // console.log(`props are ${this.props}
+            // location.state is ${location.state}
+            // destination is ${destination}`)
         
         history.push(destination)
     }

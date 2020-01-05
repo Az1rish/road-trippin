@@ -4,16 +4,30 @@ import TokenService from '../../services/token-service'
 import './Nav.css'
 
 export default class Nav extends Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            logged: false
+        }
+    }
+
+    changeState = () => {
+        if (TokenService.hasAuthToken()) {
+            this.setState({
+                logged: true
+            })
+        }
+    }
+
     handleLogoutClick = () => {
-        this.handleLogChange()
         TokenService.clearAuthToken()
     }
 
     renderTitleLink() {
+        this.changeState()
         return (
             <div className='Header__title-link'>
-                {TokenService.hasAuthToken()
+                {this.state.logged
                     ?   <Link
                             to='/validUser'>
                             Road Trippin'
@@ -28,6 +42,7 @@ export default class Nav extends Component {
     }
 
     renderLoginLink() {
+        this.changeState()
         return (
             <div className='Header__not-logged-in'>
                 <Link
@@ -35,8 +50,7 @@ export default class Nav extends Component {
                     Register
                 </Link>
                 <Link
-                    to='/login'
-                    onClick={ this.props.handleLogChange }>
+                    to='/login'>
                     Log in
                 </Link>
             </div>
@@ -44,6 +58,7 @@ export default class Nav extends Component {
     }
 
     renderLogoutLink() {
+        this.changeState()
         return (
             <div className='Header__logged-in'>
                 <Link
@@ -64,14 +79,14 @@ export default class Nav extends Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return <>
             <nav className='Header'>
                 <h1>
                     {this.renderTitleLink()}
                 </h1>
                 <div className='Header__buttons'>
-                    {TokenService.hasAuthToken()
+                    {this.state.logged
                     ? this.renderLogoutLink()
                     : this.renderLoginLink()}
                 </div>
