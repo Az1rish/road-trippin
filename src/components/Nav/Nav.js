@@ -20,6 +20,7 @@ export default class Nav extends Component {
     }
 
     handleLogoutClick = () => {
+        console.log("log out clicked")
         TokenService.clearAuthToken()
         this.setState({
             logged: false
@@ -29,7 +30,6 @@ export default class Nav extends Component {
     renderTitleLink() {
         return (
             <div className='Header__title-link'>
-                {/* {this.changeState()} */}
                 {this.state.logged
                     ?   <Link
                             to='/validUser'>
@@ -47,7 +47,6 @@ export default class Nav extends Component {
     renderLoginLink() {
         return (
             <div className='Header__not-logged-in'>
-                {/* {this.changeState()} */}
                 <Link
                     to='/register'>
                     Register
@@ -63,7 +62,7 @@ export default class Nav extends Component {
     renderLogoutLink() {
         return (
             <div className='Header__logged-in'>
-                {/* {this.changeState()} */}
+                
                 <Link
                     to='/upload'>
                     Add Photo
@@ -82,7 +81,7 @@ export default class Nav extends Component {
     }
 
     render() {
-        // console.log(this.props)
+        console.log(this.state.logged)
         return <>
             <nav className='Header'>
                 <h1>

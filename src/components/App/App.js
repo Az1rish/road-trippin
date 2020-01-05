@@ -17,13 +17,14 @@ import './App.css'
 
 export default class App extends Component {
   state = {
-    hasError: false
+    hasError: false,
+    loggedIn: false
   }
 
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
-  }
+  } 
 
   render() {
     return (
