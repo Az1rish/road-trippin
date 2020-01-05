@@ -52,7 +52,8 @@ export default class Nav extends Component {
                     Register
                 </Link>
                 <Link
-                    to='/login'>
+                    to='/login'
+                    onClick={this.changeState}>
                     Log in
                 </Link>
             </div>
