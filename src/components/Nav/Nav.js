@@ -4,10 +4,21 @@ import TokenService from '../../services/token-service'
 import './Nav.css'
 
 export default class Nav extends Component {
+    // state = {
+        // logged: true
+    // }
+
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
-        TokenService.hasAuthToken()
+        // this.setState({
+            // logged: false
+        // }, function() {
+            TokenService.clearAuthToken()
+        // });
     }
+
+    // componentDidUpdate() {
+        // TokenService.hasAuthToken()
+    //   }
 
     renderTitleLink() {
         return (
@@ -34,7 +45,8 @@ export default class Nav extends Component {
                     Register
                 </Link>
                 <Link
-                    to='/login'>
+                    to='/login'
+                    logged={ this.setState({ logged: true }) }>
                     Log in
                 </Link>
             </div>
@@ -54,6 +66,7 @@ export default class Nav extends Component {
                 </Link>
                 <Link
                     onClick={this.handleLogoutClick}
+                    logged={this.setState({ logged: false })}
                     to='/'>
                     Log Out
                 </Link>
@@ -62,7 +75,7 @@ export default class Nav extends Component {
     }
 
     render() {
-        console.log(TokenService.hasAuthToken())
+        // console.log(TokenService.hasAuthToken())
         return <>
             <nav className='Header'>
                 <h1>

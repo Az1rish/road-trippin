@@ -7,7 +7,11 @@ import './LoginForm.css'
 
 export default class LoginForm extends Component {
     static defaultProps = {
-        onLoginSuccess: () => {}
+        onLoginSuccess: () => {
+            // this.setState({
+                // logged: true,
+            // })
+        }
     }
 
     state = { error: null }

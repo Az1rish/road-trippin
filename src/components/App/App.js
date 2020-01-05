@@ -12,10 +12,24 @@ import MyPhotosPage from '../../routes/MyPhotosPage/MyPhotosPage'
 import PhotoPage from '../../routes/PhotoPage/PhotoPage'
 import UploadPage from '../../routes/UploadPage/UploadPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+// import TokenService from '../../services/token-service'
 import './App.css'
 
 export default class App extends Component {
-  state = { hasError: false }
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      logged: false
+    }
+  }
+  
+
+  // componentDidUpdate(prevProps, prevState, snapshot) {
+    // if (this.state.logged === true) {
+      // this.setState({ logged: false })
+    // }
+  // }
 
   static getDerivedStateFromError(error) {
     console.error(error)
@@ -26,7 +40,9 @@ export default class App extends Component {
     return (
       <div className='App'>
         <header className='App__navBar'>
-          <Nav />
+          {/* {TokenService.hasAuthToken()} */}
+          <Nav 
+            logged={this.state.logged} />
         </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
