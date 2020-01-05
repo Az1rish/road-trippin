@@ -16,20 +16,20 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import './App.css'
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      hasError: false,
-      logged: false
-    }
+    hasError: false,
+    logged: false
+  };
+    this.handleLogChange = this.handleLogChange.bind(this);
   }
-  
 
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-    // if (this.state.logged === true) {
-      // this.setState({ logged: false })
-    // }
-  // }
+  handleLogChange() {
+    this.setState({
+      logged: !this.state.logged
+    })
+  }
 
   static getDerivedStateFromError(error) {
     console.error(error)
@@ -40,9 +40,8 @@ export default class App extends Component {
     return (
       <div className='App'>
         <header className='App__navBar'>
-          {/* {TokenService.hasAuthToken()} */}
           <Nav 
-            logged={this.state.logged} />
+            handleLogChange={this.handleLogChange}/>
         </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
