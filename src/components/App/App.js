@@ -12,13 +12,22 @@ import MyPhotosPage from '../../routes/MyPhotosPage/MyPhotosPage'
 import PhotoPage from '../../routes/PhotoPage/PhotoPage'
 import UploadPage from '../../routes/UploadPage/UploadPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
-// import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service'
 import './App.css'
 
 export default class App extends Component {
-  state = {
-    hasError: false,
-    loggedIn: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      authenticated: false
+    }
+  }
+
+  changeState = () => {
+    this.setState({
+      authenticated: TokenService.hasAuthToken()
+    })
   }
 
   static getDerivedStateFromError(error) {
@@ -30,9 +39,11 @@ export default class App extends Component {
     return (
       <div className='App'>
         <header className='App__navBar'>
-          <Nav />
+          <Nav
+            authenticated={this.state.authenticated} />
         </header>
-        <main className='App__main'>
+        <main
+          className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
           <Switch>
             <PublicOnlyRoute

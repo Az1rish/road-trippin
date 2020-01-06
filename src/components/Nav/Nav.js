@@ -4,33 +4,14 @@ import TokenService from '../../services/token-service'
 import './Nav.css'
 
 export default class Nav extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            logged: false
-        }
-    }
-
-    changeState = () => {
-        if (TokenService.hasAuthToken()) {
-            this.setState({
-                logged: true
-            })
-        }
-    }
-
     handleLogoutClick = () => {
-        console.log("log out clicked")
         TokenService.clearAuthToken()
-        this.setState({
-            logged: false
-        })
     }
 
     renderTitleLink() {
         return (
             <div className='Header__title-link'>
-                {this.state.logged
+                {TokenService.hasAuthToken()
                     ?   <Link
                             to='/validUser'>
                             Road Trippin'
@@ -52,8 +33,7 @@ export default class Nav extends Component {
                     Register
                 </Link>
                 <Link
-                    to='/login'
-                    onClick={this.changeState}>
+                    to='/login'>
                     Log in
                 </Link>
             </div>
@@ -82,14 +62,14 @@ export default class Nav extends Component {
     }
 
     render() {
-        console.log(this.state.logged)
         return <>
-            <nav className='Header'>
+            <nav
+                className='Header'>
                 <h1>
                     {this.renderTitleLink()}
                 </h1>
                 <div className='Header__buttons'>
-                    {this.state.logged
+                    {TokenService.hasAuthToken()
                     ? this.renderLogoutLink()
                     : this.renderLoginLink()}
                 </div>
