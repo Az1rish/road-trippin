@@ -54,7 +54,7 @@ export default class App extends Component {
             />
             <PublicOnlyRoute
               path={'/login'}
-              render={(props) => <LoginPage {...props} changeState={this.changeState} /> }
+              component={() => <LoginPage changeState={this.changeState} />}
             />
             <PublicOnlyRoute
               path={'/register'}

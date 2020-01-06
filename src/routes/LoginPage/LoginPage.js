@@ -12,18 +12,21 @@ export default class LoginPage extends Component {
     }
 
     handleLoginSuccess = () => {
+        this.props.changeState()
         const { location, history } = this.props
+        
         const destination = (location.state || {}).from || '/validUser'
 
-        // console.log(`props are ${this.props}
-            // location.state is ${location.state}
-            // destination is ${destination}`)
+        console.log(`props are ${this.props}
+            location.state is ${location.state}
+            destination is ${destination}`)
         
         history.push(destination)
+        
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <Section className='LoginPage'>
                 <h2>Login</h2>
