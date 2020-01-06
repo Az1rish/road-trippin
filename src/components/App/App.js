@@ -31,7 +31,7 @@ export default class App extends Component {
   }
 
   static getDerivedStateFromError(error) {
-    console.error(error)
+    // console.error(error)
     return { hasError: true }
   } 
 

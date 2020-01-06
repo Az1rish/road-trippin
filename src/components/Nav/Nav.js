@@ -11,7 +11,7 @@ export default class Nav extends Component {
     renderTitleLink() {
         return (
             <div className='Header__title-link'>
-                {TokenService.hasAuthToken()
+                {this.props.authenticated
                     ?   <Link
                             to='/validUser'>
                             Road Trippin'
@@ -69,7 +69,7 @@ export default class Nav extends Component {
                     {this.renderTitleLink()}
                 </h1>
                 <div className='Header__buttons'>
-                    {TokenService.hasAuthToken()
+                    {this.props.authenticated
                     ? this.renderLogoutLink()
                     : this.renderLoginLink()}
                 </div>
