@@ -62,6 +62,7 @@ export default class Nav extends Component {
     }
 
     render() {
+        console.log(this.props)
         return <>
             <nav
                 className='Header'>

@@ -40,7 +40,8 @@ export default class App extends Component {
       <div className='App'>
         <header className='App__navBar'>
           <Nav
-            authenticated={this.state.authenticated} />
+            authenticated={this.state.authenticated}
+            changeState={this.changeState} />
         </header>
         <main
           className='App__main'>
@@ -54,6 +55,7 @@ export default class App extends Component {
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
+              changeState={this.changeState}
             />
             <PublicOnlyRoute
               path={'/register'}
