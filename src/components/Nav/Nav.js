@@ -6,6 +6,7 @@ import './Nav.css'
 export default class Nav extends Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        this.props.changeState()
     }
 
     renderTitleLink() {
@@ -62,7 +63,7 @@ export default class Nav extends Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return <>
             <nav
                 className='Header'>
