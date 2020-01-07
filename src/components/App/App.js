@@ -20,7 +20,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       hasError: false,
-      authenticated: false
+      authenticated: TokenService.hasAuthToken()
     }
   }
 

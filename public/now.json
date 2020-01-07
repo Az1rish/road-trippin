@@ -1,8 +1,10 @@
 {
     "version": 2,
+    "alias": "road-trippin",
     "name": "road-trippin",
     "routes": [
         { "handle": "filesystem" },
+        { "src": "^/static/(.*)", "dest": "/static/$1" },
         { "src": "/.*", "dest": "/index.html" }
     ]
   }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Section } from '../../components/Utils/Utils'
+import { withRouter } from 'react-router-dom'
 import './LoginPage.css'
 
-export default class LoginPage extends Component {
+class LoginPage extends Component {
     static defaultProps = {
         location: {},
         history: {
@@ -11,7 +12,7 @@ export default class LoginPage extends Component {
         },
     }
 
-    handleLoginSuccess = () => {
+    handleLoginSuccess = () => { 
         this.props.changeState()
         this.props.history.push('/validUser')
     }
@@ -27,3 +28,5 @@ export default class LoginPage extends Component {
         )
     }
 }
+
+export default withRouter(LoginPage)
