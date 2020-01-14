@@ -103,7 +103,8 @@ export default class UploadForm extends Component {
                     </Input>
                 </div>
                 <Button
-                    type='submit'>
+                    type='submit'
+                    onClick={this.handleSubmit}>
                     Add Photo
                 </Button>
             </form>
