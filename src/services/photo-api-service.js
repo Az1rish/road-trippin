@@ -25,6 +25,26 @@ const PhotoApiService = {
                     : res.json()
             )
     },
+    postPhoto(userId, image, title, location, content) {
+        return fetch(`${config.API_ENDPOINT}/upload/image`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({
+                user_id: userId,
+                image,
+                title,
+                location,
+                content
+            }),
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e)): res.json()
+            )
+    },
     getPhotoComments(photoId) {
         return fetch(`${config.API_ENDPOINT}/photos/${photoId}/comments`, {
             headers: {

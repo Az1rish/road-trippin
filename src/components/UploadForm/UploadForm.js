@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Required, Button } from '../Utils/Utils'
-import AuthApiService from '../../services/auth-api-service'
+import PhotoApiService from '../../services/photo-api-service'
 // import ButtonLink from '../ButtonLink/ButtonLink'
 import './UploadForm.css'
 
@@ -9,20 +9,37 @@ export default class UploadForm extends Component {
         onUploadSuccess: () => {}
     }
 
-    state = { error: null }
+    state = {
+        error: null,
+        selectedFile: null,
+    }
+
+    fileSelectedHandler = ev => {
+        this.setState({
+            selectedFile: ev.target.files[0]
+        })
+        
+    }
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { full_name, location, description } = ev.target
+        console.log(this.state.selectedFile)
+        const { image, title, location, description } = ev.target
 
         this.setState({ error:null })
-        AuthApiService.postUser({
+        const newPhoto = {
+            image: this.state.selectedFile,
             location: location.value,
             description: description.value,
-            full_name: full_name.value,
-        })
-            .then(user => {
-                full_name.value = ''
+            title: title.value,
+        }
+        
+        console.log(newPhoto)
+        
+        PhotoApiService.postPhoto(newPhoto)
+            .then(photo => {
+                image.value= ''
+                title.value = ''
                 location.value = ''
                 description.value = ''
                 this.props.onUploadSuccess()
@@ -40,19 +57,31 @@ export default class UploadForm extends Component {
                 <div role='alert'>
                     {error && <p className='red'>{error}</p>}
                 </div>
-                <div className='photo'>
-                    <label htmlFor='UploadForm__photo'>
+                <div className='image'>
+                    <label htmlFor='UploadForm__image'>
                         Choose Photo <Required />
                     </label>
                     <Input
-                        name='photo'
+                        name='image'
                         type='file'
                         required
-                        id='UploadForm__photo'>
+                        id='UploadForm__image'
+                        onChange={this.fileSelectedHandler}>
+                    </Input>
+                </div>
+                <div className='title'>
+                    <label htmlFor='UploadForm__title'>
+                        Title <Required />
+                    </label>
+                    <Input
+                        name='title'
+                        type='text'
+                        required
+                        id='UploadForm__title'>
                     </Input>
                 </div>
                 <div className='location'>
-                    <label                          htmlFor='UploadForm__location'>
+                    <label htmlFor='UploadForm__location'>
                         Location <Required />
                     </label>
                     <Input
