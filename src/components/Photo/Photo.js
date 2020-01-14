@@ -16,6 +16,9 @@ export default class Photo extends Component {
                         <h2 className='Photo__heading'>
                             {photo.title}
                         </h2>
+                        <h3 className='Photo__location'>
+                            {photo.location}
+                        </h3>
                         <p className='Photo__description'>
                             {truncate(photo.content)}
                         </p>
