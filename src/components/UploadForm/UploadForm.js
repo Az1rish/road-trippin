@@ -25,6 +25,7 @@ export default class UploadForm extends Component {
         ev.preventDefault()
         console.log(this.state.selectedFile)
         const { image, title, location, description } = ev.target
+        console.log(ev.target)
 
         this.setState({ error:null })
         const newPhoto = {
