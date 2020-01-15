@@ -26,6 +26,7 @@ const PhotoApiService = {
             )
     },
     postPhoto(/*userId, */image, title, location, content) {
+        console.log(image, title, location, content)
         return fetch(`${config.API_ENDPOINT}/upload/image`, {
             method: 'POST',
             headers: {
