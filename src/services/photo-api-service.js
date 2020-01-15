@@ -25,7 +25,7 @@ const PhotoApiService = {
                     : res.json()
             )
     },
-    postPhoto(userId, image, title, location, content) {
+    postPhoto(/*userId, */image, title, location, content) {
         return fetch(`${config.API_ENDPOINT}/upload/image`, {
             method: 'POST',
             headers: {
@@ -33,7 +33,7 @@ const PhotoApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
-                user_id: userId,
+                // user_id: userId,
                 image,
                 title,
                 location,

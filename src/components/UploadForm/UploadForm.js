@@ -25,11 +25,11 @@ export default class UploadForm extends Component {
         ev.preventDefault()
         console.log(this.state.selectedFile)
         const { image, title, location, description } = ev.target
-        console.log(ev.target)
+        console.log(ev.target[0])
 
         this.setState({ error:null })
         const newPhoto = {
-            image: this.state.selectedFile,
+            image: image.value,
             location: location.value,
             description: description.value,
             title: title.value,
@@ -54,6 +54,7 @@ export default class UploadForm extends Component {
         const { error } = this.state
         return (
             <form
+                onSubmit={this.handleSubmit}
                 className='UploadForm'>
                 <div role='alert'>
                     {error && <p className='red'>{error}</p>}
@@ -104,8 +105,7 @@ export default class UploadForm extends Component {
                     </Input>
                 </div>
                 <Button
-                    type='submit'
-                    onClick={this.handleSubmit}>
+                    type='submit'>
                     Add Photo
                 </Button>
             </form>
