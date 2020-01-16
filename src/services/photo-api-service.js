@@ -25,8 +25,8 @@ const PhotoApiService = {
                     : res.json()
             )
     },
-    postPhoto(newPhoto) {
-        let formData = new FormData(newPhot0)
+    postPhoto(newPhoto, formData) {
+        
         console.log(newPhoto)
         const { image, title, location, description } = newPhoto
         console.log(image, title, location, description)

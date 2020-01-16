@@ -34,6 +34,8 @@ export default class UploadForm extends Component {
             description: description.value,
             title: title.value,
         }
+
+        // let formData = new FormData(Object.keys(newPhoto))
         
         console.log(newPhoto)
         
@@ -58,7 +60,7 @@ export default class UploadForm extends Component {
                 className='UploadForm'
                 encType='multipart/form-data'>
                 <div role='alert'>
-                    {<p className='red'>{error}</p>}
+                    <p className='red'>{error}</p>
                 </div>
                 <div className='image'>
                     <label htmlFor='UploadForm__image'>
