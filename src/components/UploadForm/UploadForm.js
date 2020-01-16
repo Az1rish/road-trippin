@@ -26,14 +26,16 @@ export default class UploadForm extends Component {
         console.log(this.state.selectedFile)
         const { image, title, location, description } = ev.target
         console.log(image)
+        console.log(ev.target)
 
         this.setState({ error:null })
-        const newPhoto = {
-            image: this.state.selectedFile,
-            location: location.value,
-            description: description.value,
-            title: title.value,
-        }
+        const newPhoto = new FormData(ev.target)
+        // const newPhoto = {
+            // image: this.state.selectedFile,
+            // location: location.value,
+            // description: description.value,
+            // title: title.value,
+        // }
 
         // let formData = new FormData(Object.keys(newPhoto))
         
