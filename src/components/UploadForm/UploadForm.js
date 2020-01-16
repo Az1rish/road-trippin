@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Required, Button } from '../Utils/Utils'
 import PhotoApiService from '../../services/photo-api-service'
-// import ButtonLink from '../ButtonLink/ButtonLink'
 import './UploadForm.css'
 
 export default class UploadForm extends Component {
@@ -23,24 +22,12 @@ export default class UploadForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        console.log(this.state.selectedFile)
+    
         const { image, title, location, description } = ev.target
-        console.log(location)
-        console.log(ev.target)
 
         this.setState({ error:null })
 
         const newPhoto = new FormData(ev.target)
-        // const newPhoto = {
-            // image: this.state.selectedFile,
-            // location: location.value,
-            // description: description.value,
-            // title: title.value,
-        // }
-
-        // let formData = new FormData(Object.keys(newPhoto))
-        
-        // console.log(newPhoto)
         
         PhotoApiService.postPhoto(newPhoto)
             .then(form => {

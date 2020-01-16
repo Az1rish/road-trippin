@@ -6,7 +6,6 @@ import './Photo.css'
 export default class Photo extends Component {
     render() {
         const { photo } = this.props
-        console.log(photo)
 
         return (
             <Link to={`/photo/${photo.id}`} className='Photo'>
