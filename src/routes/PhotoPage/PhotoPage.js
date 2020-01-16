@@ -36,7 +36,7 @@ export default class PhotoPage extends Component {
         return <>
             <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
             <h2>{photo.title}</h2>
-            <PhotoContent photo={photo} />
+            <PhotoDescription photo={photo} />
             <PhotoComments comments={comments} />
             <CommentForm />
         </>
@@ -44,31 +44,31 @@ export default class PhotoPage extends Component {
 
     render() {
         const { error, photo } = this.context
-        let content
+        let description
         if (error) {
-            content = (error.error === `Photo doesn't exist`)
+            description = (error.error === `Photo doesn't exist`)
                 ? <p className='red'>Photo not found</p>
                 : <p className='red'>There was an error</p>
         } else if (!photo.id) {
-            content = <div className='loading' />
+            description = <div className='loading' />
         } else {
-            content = this.renderPhoto()
+            description = this.renderPhoto()
         }
         return (
             <>
             {/* <AccountButtons /> */}
             <Section className='PhotoPage'>
-                {content}
+                {description}
             </Section>
             </>
         )
     }
 }
 
-function PhotoContent ({ photo }) {
+function PhotoDescription ({ photo }) {
     return (
-        <p className='PhotoPage__content'>
-            {photo.content}
+        <p className='PhotoPage__description'>
+            {photo.description}
         </p>
     )
 }

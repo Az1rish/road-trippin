@@ -25,10 +25,11 @@ export default class UploadForm extends Component {
         ev.preventDefault()
         console.log(this.state.selectedFile)
         const { image, title, location, description } = ev.target
-        console.log(image)
+        console.log(location)
         console.log(ev.target)
 
         this.setState({ error:null })
+
         const newPhoto = new FormData(ev.target)
         // const newPhoto = {
             // image: this.state.selectedFile,
@@ -39,7 +40,7 @@ export default class UploadForm extends Component {
 
         // let formData = new FormData(Object.keys(newPhoto))
         
-        console.log(newPhoto)
+        // console.log(newPhoto)
         
         PhotoApiService.postPhoto(newPhoto)
             .then(form => {
