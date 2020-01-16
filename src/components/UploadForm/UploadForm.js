@@ -38,7 +38,7 @@ export default class UploadForm extends Component {
         console.log(newPhoto)
         
         PhotoApiService.postPhoto(newPhoto)
-            .then(photo => {
+            .then(form => {
                 image.value= ''
                 title.value = ''
                 location.value = ''
@@ -58,7 +58,7 @@ export default class UploadForm extends Component {
                 className='UploadForm'
                 encType='multipart/form-data'>
                 <div role='alert'>
-                    {error && <p className='red'>{error}</p>}
+                    {<p className='red'>{error}</p>}
                 </div>
                 <div className='image'>
                     <label htmlFor='UploadForm__image'>

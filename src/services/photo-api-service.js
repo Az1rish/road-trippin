@@ -25,20 +25,23 @@ const PhotoApiService = {
                     : res.json()
             )
     },
-    postPhoto(/*userId, */image, title, location, content) {
-        console.log(image, title, location, content)
+    postPhoto(newPhoto) {
+        let formData = new FormData(newPhot0)
+        console.log(newPhoto)
+        const { image, title, location, description } = newPhoto
+        console.log(image, title, location, description)
         return fetch(`${config.API_ENDPOINT}/upload/image`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
+                'content-type': 'multipart/form-data',
+                // 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 // user_id: userId,
                 image,
                 title,
                 location,
-                content
+                content: description
             }),
         })
             .then(res =>
