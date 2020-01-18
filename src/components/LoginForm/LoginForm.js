@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import { Input, Button } from '../Utils/Utils'
+import AuthContext from '../../contexts/AuthContext'
 import './LoginForm.css'
 
 export default class LoginForm extends Component {
@@ -9,7 +10,12 @@ export default class LoginForm extends Component {
         onLoginSuccess: () => {}
     }
 
-    state = { error: null }
+    static contextType = AuthContext
+
+    state = {
+        error: null, 
+        user: null,
+    }
 
     handleSubmitBasicAuth = ev => {
         ev.preventDefault()
@@ -33,7 +39,7 @@ export default class LoginForm extends Component {
             user_name: user_name.value,
             password: password.value
         })
-    
+            .then(this.context.setUser)
             .then(res => {
                 user_name.value = ''
                 password.value = ''
@@ -43,6 +49,8 @@ export default class LoginForm extends Component {
             .catch(res => {
                 this.setState({ error: res.error })
             })
+        
+        
     }
 
     render() {
