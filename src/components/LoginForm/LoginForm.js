@@ -40,6 +40,7 @@ export default class LoginForm extends Component {
             password: password.value
         })
             .then(this.context.setUser)
+            .then(console.log(this.state.user))
             .then(res => {
                 user_name.value = ''
                 password.value = ''
