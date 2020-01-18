@@ -13,6 +13,7 @@ import PhotoPage from '../../routes/PhotoPage/PhotoPage'
 import UploadPage from '../../routes/UploadPage/UploadPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import TokenService from '../../services/token-service'
+import AuthContext from '../../contexts/AuthContext'
 import './App.css'
 
 export default class App extends Component {
@@ -20,13 +21,16 @@ export default class App extends Component {
     super(props);
     this.state = {
       hasError: false,
-      authenticated: TokenService.hasAuthToken()
+      isAuthenticated: TokenService.hasAuthToken(),
+      user: null
     }
   }
 
+  static contextType = AuthContext
+
   changeState = () => {
     this.setState({
-      authenticated: TokenService.hasAuthToken()
+      isAuthenticated: TokenService.hasAuthToken()
     })
   }
 
@@ -39,7 +43,7 @@ export default class App extends Component {
       <div className='App'>
         <header className='App__navBar'>
           <Nav
-            authenticated={this.state.authenticated}
+            isAuthenticated={this.state.isAuthenticated}
             changeState={this.changeState} />
         </header>
         <main

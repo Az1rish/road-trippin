@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
+import AuthContext from '../../contexts/AuthContext'
 import './Nav.css'
 
 export default class Nav extends Component {
+    static contextType = AuthContext
+
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         this.props.changeState()
     }
 
     renderTitleLink() {
+        const title = ({ user }) => user
+            ? `Road Trippin' with ${user.full_name || user.user_name}`
+            : `Road Trippin'`;
+
         return (
             <div className='Header__title-link'>
-                {this.props.authenticated
+                {this.props.isAuthenticated
                     ?   <Link
                             to='/validUser'>
-                            Road Trippin'
+                            {title}
                         </Link>
                     :   <Link
                             to='/'>
-                            Road Trippin'
+                            {title}
                         </Link>
                 }
             </div>
@@ -71,7 +78,7 @@ export default class Nav extends Component {
                     {this.renderTitleLink()}
                 </h1>
                 <div className='Header__buttons'>
-                    {this.props.authenticated
+                    {this.props.isAuthenticated
                     ? this.renderLogoutLink()
                     : this.renderLoginLink()}
                 </div>
