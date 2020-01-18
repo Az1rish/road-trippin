@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { BrowserRouter } from 'react-router-dom'
 import { PhotoListProvider } from './contexts/PhotoListContext'
 import { PhotoProvider } from './contexts/PhotoContext'
+import { AuthProvider } from './contexts/AuthContext'
 import './index.css'
 import App from './components/App/App'
 
@@ -24,7 +25,9 @@ ReactDOM.render(
     <BrowserRouter>
         <PhotoListProvider>
             <PhotoProvider>
-                <App />
+                <AuthProvider>
+                    <App />
+                </AuthProvider>
             </PhotoProvider>
         </PhotoListProvider>
     </BrowserRouter>, 
