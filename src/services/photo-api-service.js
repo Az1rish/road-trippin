@@ -13,6 +13,21 @@ const PhotoApiService = {
                     : res.json()
             )
     },
+    getPhotosByUser(user_id) {
+        return fetch(`${config.API_ENDPOINT}/photos/myPhotos`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: {
+                user_id
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
     getPhoto(photoId) {
         return fetch(`${config.API_ENDPOINT}/photos/${photoId}`, {
             headers: {

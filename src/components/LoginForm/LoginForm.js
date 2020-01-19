@@ -14,7 +14,7 @@ export default class LoginForm extends Component {
 
     state = {
         error: null, 
-        user: null,
+        // user: null,
     }
 
     handleSubmitBasicAuth = ev => {
@@ -39,12 +39,20 @@ export default class LoginForm extends Component {
             user_name: user_name.value,
             password: password.value
         })
-            .then(this.context.setUser = (user, cb) => {
-                this.setState({
-                  user: user_name.value
-                }, () => console.log(this.state.user))
-              })
+            .then((res) => {
+                this.context.setUser(user_name.value)
+                // console.log(this.state.user)
+
+                user_name.value = ''
+                password.value = ''
+                TokenService.saveAuthToken(res.authToken)
+                this.props.onLoginSuccess()
+
+            })
+
+
             .then(res => {
+                // console.log(this.state.user)
                 user_name.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
@@ -53,7 +61,6 @@ export default class LoginForm extends Component {
             .catch(res => {
                 this.setState({ error: res.error })
             })
-        
         
     }
 

@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { PhotoStarRating } from '../PhotoStarRating/PhotoStarRating'
+import { format } from 'date-fns'
 import './Photo.css'
 
 export default class Photo extends Component {
     render() {
         const { photo } = this.props
-
+        console.log(photo)
+        const postTime = new Date(photo.date_created)
+        postTime.toString()
         return (
             <Link to={`/photo/${photo.id}`} className='Photo'>
                 <div className='Photo__image' style={{backgroundImage: `url(${photo.image})`}} />
@@ -21,6 +24,9 @@ export default class Photo extends Component {
                         </h3>
                         <p className='Photo__description'>
                             {truncate(photo.description)}
+                        </p>
+                        <p>
+                            Posted by {photo.user.full_name} on {format(postTime, "PPPP")}
                         </p>
                     </div>
 

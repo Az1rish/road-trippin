@@ -5,6 +5,7 @@ import PhotoApiService from '../../services/photo-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating'
 import CommentForm from '../../components/CommentForm/CommentForm'
+import { format } from 'date-fns'
 import './PhotoPage.css'
 
 
@@ -64,6 +65,8 @@ export default class PhotoPage extends Component {
 }
 
 function PhotoDescription ({ photo }) {
+    const postTime = new Date(photo.date_created)
+    postTime.toString()
     return (
         <div className='PhotoPage__info'>
             <h2 className='PhotoPage__location'>
@@ -71,6 +74,9 @@ function PhotoDescription ({ photo }) {
             </h2>
             <p className='PhotoPage__description'>
                 {photo.description}
+            </p>
+            <p>
+                Posted by {photo.user.full_name} on {format(postTime, "PPPP")}
             </p>
         </div>
     )

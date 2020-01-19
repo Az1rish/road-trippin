@@ -14,6 +14,7 @@ export default class Nav extends Component {
 
     renderTitleLink() {
         // const { user } = this.context
+        console.log(this.context)
 
         return (
             <div className='Header__title-link'>
@@ -21,7 +22,7 @@ export default class Nav extends Component {
                     ?   <Link
                             to='/validUser'>
                                 Road Trippin'
-                            {/* Road Trippin' with {user.full_name || user.user_name} */}
+                            {/* Road Trippin' with {user} */}
                         </Link>
                     :   <Link
                             to='/'>
