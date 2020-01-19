@@ -13,20 +13,19 @@ export default class Nav extends Component {
     }
 
     renderTitleLink() {
-        const title = ({ user }) => user
-            ? `Road Trippin' with ${user.full_name || user.user_name}`
-            : `Road Trippin'`;
+        // const { user } = this.context
 
         return (
             <div className='Header__title-link'>
                 {this.props.isAuthenticated
                     ?   <Link
                             to='/validUser'>
-                            {title}
+                                Road Trippin'
+                            {/* Road Trippin' with {user.full_name || user.user_name} */}
                         </Link>
                     :   <Link
                             to='/'>
-                            {title}
+                            Road Trippin'
                         </Link>
                 }
             </div>
