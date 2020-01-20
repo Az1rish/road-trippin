@@ -13,7 +13,7 @@ export default class Nav extends Component {
     }
 
     renderTitleLink() {
-        // const { user } = this.context
+        const { user } = this.context
         console.log(this.context)
 
         return (
@@ -21,8 +21,8 @@ export default class Nav extends Component {
                 {this.props.isAuthenticated
                     ?   <Link
                             to='/validUser'>
-                                Road Trippin'
-                            {/* Road Trippin' with {user} */}
+                                {/* Road Trippin' */}
+                            Road Trippin' with {user}
                         </Link>
                     :   <Link
                             to='/'>
