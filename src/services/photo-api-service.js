@@ -19,7 +19,9 @@ const PhotoApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: {
-                user_id
+                user: {
+                    user_name: user_id
+                }
             }
         })
             .then(res =>
