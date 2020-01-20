@@ -18,9 +18,6 @@ const PhotoApiService = {
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
-            params: {
-                user: TokenService.getAuthToken()
-            }
         })
             .then(res =>
                 (!res.ok)
