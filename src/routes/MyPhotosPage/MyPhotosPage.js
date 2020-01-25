@@ -13,7 +13,7 @@ export default class MyPhotosPage extends Component {
     static contextType = PhotoListContext
 
     componentDidMount() {
-        console.log(this.context)
+        // console.log(this.context)
         this.context.clearError()
         PhotoApiService.getPhotosByUser()
         // PhotoApiService.getPhotos()

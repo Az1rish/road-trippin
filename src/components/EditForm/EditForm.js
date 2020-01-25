@@ -82,6 +82,7 @@ class EditForm extends Component {
             method: 'PATCH',
             body: JSON.stringify(newPhoto),
             headers: {
+                'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
