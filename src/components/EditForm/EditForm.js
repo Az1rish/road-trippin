@@ -115,73 +115,69 @@ class EditForm extends Component {
 
     render() {
         const { title, description, location, error } = this.state
-        const { photo } = this.context
-        console.log(photo)
-        return (
-            <>
-                <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
-                    
-                <form
-                    className='EditBookmark__form'
-                    onSubmit={this.handleSubmit}
-                >
-                    <div className='EditBookmark__error' role='alert'>
-                        {error && <p>{error.message}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor='title'>
-                            Title
-                            {' '}
-                            <Required />
-                        </label>
-                        <Input
-                            type='text'
-                            name='title'
-                            id='title'
-                            placeholder='Great website!'
-                            required
-                            value={title}
-                            onChange={this.handleChangeTitle}
-                        />
-                    </div>
-                    
-                    <div>
-                        <label htmlFor='description'>
-                            Description
-                        </label>
-                        <textarea
-                            name='description'
-                            id='description'
-                            value={description}
-                            onChange={this.handleChangeDescription}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='location'>
-                            Location
-                            {' '}
-                            <Required />
-                        </label>
-                        <Input
-                            type='text'
-                            name='location'
-                            id='location'
-                            required
-                            value={location}
-                            onChange={this.handleChangeLocation}
-                        />
-                    </div>
-                    <div className='EditBookmark__buttons'>
-                        <Button type='button' onClick={this.handleClickCancel}>
-                            Cancel
-                        </Button>
+        // const { photo } = this.context
+        // console.log(photo)
+        return (    
+            <form
+                className='EditBookmark__form'
+                onSubmit={this.handleSubmit}
+            >
+                <div className='EditBookmark__error' role='alert'>
+                    {error && <p>{error.message}</p>}
+                </div>
+                <div>
+                    <label htmlFor='title'>
+                        Title
                         {' '}
-                        <Button type='submit'>
-                            Save
-                        </Button>
-                    </div>
-                </form>
-            </>
+                        <Required />
+                    </label>
+                    <Input
+                        type='text'
+                        name='title'
+                        id='title'
+                        placeholder='Great website!'
+                        required
+                        value={title}
+                        onChange={this.handleChangeTitle}
+                    />
+                </div>
+                
+                <div>
+                    <label htmlFor='description'>
+                        Description
+                    </label>
+                    <textarea
+                        name='description'
+                        id='description'
+                        value={description}
+                        onChange={this.handleChangeDescription}
+                    />
+                </div>
+                <div>
+                    <label htmlFor='location'>
+                        Location
+                        {' '}
+                        <Required />
+                    </label>
+                    <Input
+                        type='text'
+                        name='location'
+                        id='location'
+                        required
+                        value={location}
+                        onChange={this.handleChangeLocation}
+                    />
+                </div>
+                <div className='EditBookmark__buttons'>
+                    <Button type='button' onClick={this.handleClickCancel}>
+                        Cancel
+                    </Button>
+                    {' '}
+                    <Button type='submit'>
+                        Save
+                    </Button>
+                </div>
+            </form>
         )
     }
 }

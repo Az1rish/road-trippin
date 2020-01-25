@@ -7,7 +7,7 @@ import './Photo.css'
 export default class Photo extends Component {
     render() {
         const { photo } = this.props
-        console.log(photo)
+        // console.log(photo)
         const postTime = new Date(photo.date_created)
         postTime.toString()
         return (
