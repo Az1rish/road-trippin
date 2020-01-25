@@ -13,6 +13,19 @@ const PhotoApiService = {
                     : res.json()
             )
     },
+    postPhoto(newPhoto) { 
+        return fetch(`${config.API_ENDPOINT}/photos`, {
+            method: 'POST',
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: newPhoto,
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e)): res.json()
+            )
+    },
     getPhotosByUser() {
         return fetch(`${config.API_ENDPOINT}/photos/myPhotos`, {
             headers: {
@@ -35,19 +48,6 @@ const PhotoApiService = {
                 (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
-            )
-    },
-    postPhoto(newPhoto) { 
-        return fetch(`${config.API_ENDPOINT}/upload/image`, {
-            method: 'POST',
-            headers: {
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-            },
-            body: newPhoto,
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e)): res.json()
             )
     },
     getPhotoComments(photoId) {

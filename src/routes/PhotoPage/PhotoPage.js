@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PhotoContext from '../../contexts/PhotoContext'
 import PhotoApiService from '../../services/photo-api-service'
 import { Hyph, Section } from '../../components/Utils/Utils'
 import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating'
 import CommentForm from '../../components/CommentForm/CommentForm'
+// import EditPage from '../EditPage/EditPage'
 import { format } from 'date-fns'
 import './PhotoPage.css'
 
+let response;
 
 export default class PhotoPage extends Component {
     static defaultProps = {
@@ -16,10 +19,12 @@ export default class PhotoPage extends Component {
 
     static contextType = PhotoContext
 
+    
     componentDidMount() {
         const { photoId } = this.props.match.params
         this.context.clearError()
         PhotoApiService.getPhoto(photoId)
+            .then(req => response = req)
             .then(this.context.setPhoto)
             .catch(this.context.setError)
         PhotoApiService.getPhotoComments(photoId)
@@ -33,6 +38,9 @@ export default class PhotoPage extends Component {
 
     renderPhoto() {
         const { photo, comments } = this.context
+        console.log(photo)
+        console.log(response)
+        // console.log(req)
         return <>
             <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
             <h2>{photo.title}</h2>
@@ -78,6 +86,7 @@ function PhotoDescription ({ photo }) {
             <p>
                 Posted by {photo.user.full_name} on {format(postTime, "PPPP")}
             </p>
+            <Link to={`/edit/${photo.id}`}>Edit Photo</Link>
         </div>
     )
 }

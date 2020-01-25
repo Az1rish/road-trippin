@@ -14,7 +14,7 @@ export default class Nav extends Component {
 
     renderTitleLink() {
         const { user } = this.context
-        console.log(this.context)
+        // console.log(this.context)
 
         return (
             <div className='Header__title-link'>

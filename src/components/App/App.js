@@ -11,6 +11,7 @@ import AccountPage from '../../routes/AccountPage/AccountPage'
 import MyPhotosPage from '../../routes/MyPhotosPage/MyPhotosPage'
 import PhotoPage from '../../routes/PhotoPage/PhotoPage'
 import UploadPage from '../../routes/UploadPage/UploadPage'
+import EditPage from '../../routes/EditPage/EditPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import TokenService from '../../services/token-service'
 import AuthContext from '../../contexts/AuthContext'
@@ -78,6 +79,10 @@ export default class App extends Component {
             <PrivateRoute
               path={'/upload'}
               component={UploadPage}
+            />
+            <PrivateRoute
+              path='/edit/:photoId'
+              component={EditPage}
             />
             <Route
               component={NotFoundPage}

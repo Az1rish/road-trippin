@@ -15,6 +15,7 @@ const PhotoContext = React.createContext({
     clearPhoto: () => {},
     setComments: () => {},
     addComment: () => {},
+    updatePhoto: () => {},
 })
 
 export default PhotoContext
@@ -54,6 +55,8 @@ export class PhotoProvider extends Component {
         ])
     }
 
+    updatePhoto = () => {};
+
     render() {
         const value = {
             photo: this.state.photo,
@@ -65,6 +68,7 @@ export class PhotoProvider extends Component {
             setComments: this.setComments,
             clearPhoto: this.clearPhoto,
             addComment: this.addComment,
+            updatePhoto: this.updatePhoto,
         }
         return(
             <PhotoContext.Provider value={value}>
