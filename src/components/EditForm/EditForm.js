@@ -114,10 +114,10 @@ class EditForm extends Component {
         const { title, description, location, error } = this.state
         return (    
             <form
-                className='EditBookmark__form'
+                className='EditPhoto__form'
                 onSubmit={this.handleSubmit}
             >
-                <div className='EditBookmark__error' role='alert'>
+                <div className='EditPhoto__error' role='alert'>
                     {error && <p>{error.message}</p>}
                 </div>
                 <div>
@@ -163,7 +163,7 @@ class EditForm extends Component {
                         onChange={this.handleChangeLocation}
                     />
                 </div>
-                <div className='EditBookmark__buttons'>
+                <div className='EditPhoto__buttons'>
                     <Button type='button' onClick={this.handleClickCancel}>
                         Cancel
                     </Button>
