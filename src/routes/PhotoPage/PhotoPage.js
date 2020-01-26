@@ -45,6 +45,7 @@ export default class PhotoPage extends Component {
             <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
             <h2>{photo.title}</h2>
             <PhotoDescription photo={photo} />
+            <Link to={`/photo/${photo.id}/edit`}>Edit Photo</Link>
             <PhotoComments comments={comments} />
             <CommentForm />
         </>
@@ -86,7 +87,7 @@ function PhotoDescription ({ photo }) {
             <p>
                 Posted by {photo.user.full_name} on {format(postTime, "PPPP")}
             </p>
-            <Link to={`/edit/${photo.id}`}>Edit Photo</Link>
+            
         </div>
     )
 }

@@ -65,7 +65,7 @@ export default class App extends Component {
               component={RegistrationPage}
             />
             <PrivateRoute
-              path={'/validUser'}
+              path={'/user'}
               component={AccountPage}
             />
             <PrivateRoute
@@ -73,6 +73,7 @@ export default class App extends Component {
               component={MyPhotosPage}
             />
             <PrivateRoute
+              exact
               path={'/photo/:photoId'}
               component={PhotoPage}
             />
@@ -81,7 +82,7 @@ export default class App extends Component {
               component={UploadPage}
             />
             <PrivateRoute
-              path='/edit/:photoId'
+              path={'/photo/:photoId/edit'}
               component={EditPage}
             />
             <Route

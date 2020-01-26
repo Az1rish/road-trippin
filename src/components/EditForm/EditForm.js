@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-// import TokenService from '../../services/token-service'
-// import AuthApiService from '../../services/auth-api-service'
 import { Input, Button, Required } from '../Utils/Utils'
 import PhotoContext from '../../contexts/PhotoContext'
 import PropTypes from 'prop-types'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import { withRouter } from 'react-router-dom'
-// import AuthContext from '../../contexts/AuthContext'
 import './EditForm.css'
 
 class EditForm extends Component {
@@ -31,7 +28,6 @@ class EditForm extends Component {
     };
 
     componentDidMount() {
-        // console.log(this.props)
         const { photoId } = this.props.match.params
         
         fetch(config.API_ENDPOINT + `/photos/${photoId}`, {
@@ -116,8 +112,6 @@ class EditForm extends Component {
 
     render() {
         const { title, description, location, error } = this.state
-        // const { photo } = this.context
-        // console.log(photo)
         return (    
             <form
                 className='EditBookmark__form'
@@ -184,61 +178,3 @@ class EditForm extends Component {
 }
 
 export default withRouter(EditForm)
-
-/*static defaultProps = {
-        onEditSuccess: () => {}
-    }
-
-    static contextType = AuthContext
-
-    state = {
-        error: null, 
-        // user: null,
-    }
-
-    handleSubmitBasicAuth = ev => {
-        ev.preventDefault()
-        const { user_name, password } = ev.target
-
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(user_name.value, password.value)
-        )
-
-        user_name.value = ''
-        password.value = ''
-        this.props.onEditSuccess()
-    }
-
-    handleSubmitJwtAuth = ev => {
-        ev.preventDefault()
-        this.setState({ error: null })
-        const { user_name, password } = ev.target
-
-        AuthApiService.postEdit({
-            user_name: user_name.value,
-            password: password.value
-        })
-            .then((res) => {
-                this.context.setUser(user_name.value)
-                // console.log(this.state.user)
-
-                user_name.value = ''
-                password.value = ''
-                TokenService.saveAuthToken(res.authToken)
-                this.props.onEditSuccess()
-
-            })
-
-
-            .then(res => {
-                // console.log(this.state.user)
-                user_name.value = ''
-                password.value = ''
-                TokenService.saveAuthToken(res.authToken)
-                this.props.onEditSuccess()
-            })
-            .catch(res => {
-                this.setState({ error: res.error })
-            })
-        
-    }}*/

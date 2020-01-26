@@ -20,7 +20,7 @@ export default class Nav extends Component {
             <div className='Header__title-link'>
                 {this.props.isAuthenticated
                     ?   <Link
-                            to='/validUser'>
+                            to='/user'>
                                 {/* Road Trippin' */}
                             Road Trippin' with {user}
                         </Link>
