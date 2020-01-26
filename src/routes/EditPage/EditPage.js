@@ -40,7 +40,7 @@ class EditPage extends Component {
     render() {
         const { photo, error } = this.state
 
-        function handleError(error) {
+        const handleError = () =>  {
             this.setState({
                 error
             })
