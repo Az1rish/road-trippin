@@ -57,6 +57,8 @@ export class PhotoProvider extends Component {
 
     updatePhoto = () => {};
 
+    
+
     render() {
         const value = {
             photo: this.state.photo,

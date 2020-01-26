@@ -6,6 +6,7 @@ const PhotoListContext = React.createContext({
     setError: () => {},
     clearError: () => {},
     setPhotoList: () => {},
+    deletePhoto: () => {},
 })
 export default PhotoListContext
 
@@ -28,6 +29,15 @@ export class PhotoListProvider extends Component {
         this.setState({ error: null })
     }
 
+    deletePhoto = (photoId) => {
+        const newPhotos = this.state.photoList.filter(photo =>
+            photo.id !== photoId
+        )
+        this.setState({
+            photoList: newPhotos
+        })   
+    }
+
     render() {
         const value = {
             photoList: this.state.photoList,
@@ -35,6 +45,7 @@ export class PhotoListProvider extends Component {
             setError: this.setError,
             clearError: this.clearError,
             setPhotoList: this.setPhotoList,
+            deletePhoto: this.deletePhoto,
         }
         return (
             <PhotoListContext.Provider value={value}>
