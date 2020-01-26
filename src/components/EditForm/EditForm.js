@@ -67,6 +67,12 @@ class EditForm extends Component {
     handleChangeLocation = e => {
         this.setState({ location: e.target.value })
     };
+
+    handleError = (error) =>  {
+        this.setState({
+            error
+        })
+    }
     
     handleSubmit = e => {
         e.preventDefault()
@@ -84,7 +90,9 @@ class EditForm extends Component {
         })
             .then(res => {
                 if (!res.ok)
-                    return res.json().then(error => { throw error })
+                    return res.json().then(error => { 
+                        throw error 
+                    })
             })
             .then(() => {
                 this.resetFields(newPhoto)
@@ -112,13 +120,14 @@ class EditForm extends Component {
 
     render() {
         const { title, description, location, error } = this.state
+        console.log(this.state)
         return (    
             <form
                 className='EditPhoto__form'
                 onSubmit={this.handleSubmit}
             >
                 <div className='EditPhoto__error' role='alert'>
-                    {error && <p>{error.message}</p>}
+                    {error && <p className='red'>{error}</p>}
                 </div>
                 <div>
                     <label htmlFor='title'>
