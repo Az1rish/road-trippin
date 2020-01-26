@@ -99,9 +99,8 @@ class EditForm extends Component {
                 this.context.updatePhoto(newPhoto)
                 this.props.history.push('/myPhotos')
             })
-            .catch(error => {
-                console.error(error)
-                this.setState({ error })
+            .catch(res => {
+                this.handleError(res.error.message)
             })
     }
     
@@ -120,7 +119,7 @@ class EditForm extends Component {
 
     render() {
         const { title, description, location, error } = this.state
-        console.log(this.state)
+        // console.log(this.state)
         return (    
             <form
                 className='EditPhoto__form'
