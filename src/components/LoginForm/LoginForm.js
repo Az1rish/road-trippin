@@ -13,8 +13,7 @@ export default class LoginForm extends Component {
     static contextType = AuthContext
 
     state = {
-        error: null, 
-        // user: null,
+        error: null,
     }
 
     handleSubmitBasicAuth = ev => {
@@ -41,7 +40,6 @@ export default class LoginForm extends Component {
         })
             .then((res) => {
                 this.context.setUser(user_name.value)
-                // console.log(this.state.user)
 
                 user_name.value = ''
                 password.value = ''
@@ -52,7 +50,6 @@ export default class LoginForm extends Component {
 
 
             .then(res => {
-                // console.log(this.state.user)
                 user_name.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)

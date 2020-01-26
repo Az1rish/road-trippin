@@ -40,7 +40,7 @@ class EditPage extends Component {
     render() {
         const { photo, error } = this.state
 
-        const handleError = () =>  {
+        const handleError = (error) =>  {
             this.setState({
                 error
             })
@@ -70,7 +70,7 @@ class EditPage extends Component {
                     this.props.history.push('/myPhotos')
                 })
                 .catch(res => {
-                    handleError(res.error)
+                    handleError(res.error.message)
                 })
               
         }

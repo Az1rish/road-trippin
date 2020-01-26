@@ -65,7 +65,7 @@ class EditForm extends Component {
     };
     
     handleChangeLocation = e => {
-        this.setState({ location: Number(e.target.value) })
+        this.setState({ location: e.target.value })
     };
     
     handleSubmit = e => {
@@ -84,7 +84,7 @@ class EditForm extends Component {
         })
             .then(res => {
                 if (!res.ok)
-                    return res.json().then(error => Promise.reject(error))
+                    return res.json().then(error => { throw error })
             })
             .then(() => {
                 this.resetFields(newPhoto)
