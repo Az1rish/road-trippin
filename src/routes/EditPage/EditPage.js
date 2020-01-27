@@ -46,7 +46,7 @@ class EditPage extends Component {
             })
         }
 
-        function handleDeleteRequest(photoId, callback) {
+        const handleDeleteRequest = (photoId, callback) => {
             fetch(config.API_ENDPOINT + `/photos/${photoId}`, {
                 method: 'DELETE',
                 headers: {

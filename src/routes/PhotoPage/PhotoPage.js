@@ -39,7 +39,7 @@ export default class PhotoPage extends Component {
             <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
             <h2>{photo.title}</h2>
             <PhotoDescription photo={photo} />
-            <Link to={`/photo/${photo.id}/edit`}>Edit Photo</Link>
+            <Link to={`/photo/${photo.id}/edit`} className='PhotoPage__editLink'>Edit Photo</Link>
             <PhotoComments comments={comments} />
             <CommentForm />
         </>

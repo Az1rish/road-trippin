@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const AuthContext = React.createContext({
-    user: null,
+    user: {},
     isAuthenticated: null,
     setUser: () => {},
     clearUser: () => {},
@@ -13,7 +13,7 @@ export default AuthContext
 
 export class AuthProvider extends Component {
     state = {
-        user: null,
+        user: {},
         isAuthenticated: null,
     }
 
@@ -25,7 +25,7 @@ export class AuthProvider extends Component {
 
     clearUser = () => {
         this.setState({
-            user: null
+            user: {}
         })
     }
 

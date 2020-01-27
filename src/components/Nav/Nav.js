@@ -12,8 +12,9 @@ export default class Nav extends Component {
         this.props.changeState()
     }
 
+    
     renderTitleLink() {
-        const { user } = this.context
+        // const { user } = this.context
         // console.log(this.context)
 
         return (
@@ -21,8 +22,8 @@ export default class Nav extends Component {
                 {this.props.isAuthenticated
                     ?   <Link
                             to='/user'>
-                                {/* Road Trippin' */}
-                            Road Trippin' with {user}
+                                Road Trippin'
+                            {/* Road Trippin' with {user.full_name} */}
                         </Link>
                     :   <Link
                             to='/'>

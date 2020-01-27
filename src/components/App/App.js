@@ -23,7 +23,7 @@ export default class App extends Component {
     this.state = {
       hasError: false,
       isAuthenticated: TokenService.hasAuthToken(),
-      user: null
+      user: {},
     }
   }
 
