@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LocationPage from '../../routes/LocationPage/LocationPage'
 import './SearchBar.css'
 
 export default class SearchBar extends Component {
@@ -8,7 +9,9 @@ export default class SearchBar extends Component {
         } else {
             const location = this.props.locations.find(location => location.name === value)
             this.props.changeHandler(location)
-            
+            return (
+                <LocationPage selected={location} />
+            )
         }
     }
 

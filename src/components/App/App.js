@@ -10,6 +10,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import AccountPage from '../../routes/AccountPage/AccountPage'
 import MyPhotosPage from '../../routes/MyPhotosPage/MyPhotosPage'
+import LocationPage from '../../routes/LocationPage/LocationPage'
 import PhotoPage from '../../routes/PhotoPage/PhotoPage'
 import UploadPage from '../../routes/UploadPage/UploadPage'
 import EditPage from '../../routes/EditPage/EditPage'
@@ -108,6 +109,10 @@ export default class App extends Component {
             <PrivateRoute
               path={'/myPhotos'}
               component={MyPhotosPage}
+            />
+            <PrivateRoute
+              path={'/location'}
+              component={LocationPage}
             />
             <PrivateRoute
               exact
