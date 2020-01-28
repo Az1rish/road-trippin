@@ -39,13 +39,14 @@ const PhotoApiService = {
             )
     },
     getPhotosByLocation(location) {
-        return fetch(`${config.API_ENDPOINT}/photos/location`, {
+        return fetch(`${config.API_ENDPOINT}/photos/location?location=${location}`, {
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
+                'content-type': 'application/json'
             },
-            params: {
-                query: location
-            }
+            // params: {
+                // 'location': `${location}`,
+            // }
         })
             .then(res =>
                 (!res.ok)
