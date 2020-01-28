@@ -15,7 +15,8 @@ class SearchBar extends Component {
     }
 
     render() {
-        const options = this.props.locations.map((location, i) => 
+        // const unique = [...new Set(array.map(item => item.age))];
+        const options = [...new Set(this.props.locations)].map((location, i) => 
             <option value={location}
                 key={i}>{location}</option>)
 
