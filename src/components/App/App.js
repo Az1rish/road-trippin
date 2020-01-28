@@ -112,7 +112,7 @@ export default class App extends Component {
             />
             <PrivateRoute
               path={'/location'}
-              component={LocationPage}
+              component={() => <LocationPage selected={this.state.selected} />}
             />
             <PrivateRoute
               exact

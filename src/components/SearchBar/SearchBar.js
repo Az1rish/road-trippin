@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import LocationPage from '../../routes/LocationPage/LocationPage'
+import { withRouter } from 'react-router-dom'
+// import LocationPage from '../../routes/LocationPage/LocationPage'
 import './SearchBar.css'
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
     changeSelection(value) {
         if(value === "None") {
             this.props.changeHandler(null)
         } else {
-            const location = this.props.locations.find(location => location.name === value)
+            const location = this.props.locations.find(location => location === value)
             this.props.changeHandler(location)
-            return (
-                <LocationPage selected={location} />
-            )
+            this.props.history.push('/location')
         }
     }
 
@@ -27,7 +26,8 @@ export default class SearchBar extends Component {
                     <select
                         id='location'
                         name='location'
-                        onChange={e => this.changeSelection(e.target.value)}>
+                        onChange={e => {
+                            this.changeSelection(e.target.value)}}>
                             <option value='None'>Select one...</option>
                             {options}
                         </select>
@@ -40,3 +40,5 @@ export default class SearchBar extends Component {
 SearchBar.defaultProps = {
     locations: []
 }
+
+export default withRouter(SearchBar)
