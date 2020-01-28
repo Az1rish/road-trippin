@@ -44,9 +44,6 @@ const PhotoApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
                 'content-type': 'application/json'
             },
-            // params: {
-                // 'location': `${location}`,
-            // }
         })
             .then(res =>
                 (!res.ok)

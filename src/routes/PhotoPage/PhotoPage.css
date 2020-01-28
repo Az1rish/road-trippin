@@ -1,10 +1,3 @@
-/* .PhotoPage { */
-  /* display: flex; */
-  /* flex: 1; */
-  /* align-items: center; */
-  /* justify-content: flex-end; */
-/* } */
-
 .PhotoPage__editLink {
   background:#525e80;
   color: white;
@@ -23,7 +16,6 @@
   }
   
   .PhotoPage__comment-list {
-    /* padding-inline-start: 20px; */
     list-style-type: none;
     padding: 5px;
     background-color: #a3bcff;

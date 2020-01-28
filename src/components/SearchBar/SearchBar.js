@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-// import LocationPage from '../../routes/LocationPage/LocationPage'
 import './SearchBar.css'
 
 class SearchBar extends Component {
@@ -15,7 +14,6 @@ class SearchBar extends Component {
     }
 
     render() {
-        // const unique = [...new Set(array.map(item => item.age))];
         const options = [...new Set(this.props.locations)].map((location, i) => 
             <option value={location}
                 key={i}>{location}</option>)

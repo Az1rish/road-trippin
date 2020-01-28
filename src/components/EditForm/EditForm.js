@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import { withRouter } from 'react-router-dom'
-import './EditForm.css'
 
 class EditForm extends Component {
     static propTypes = {

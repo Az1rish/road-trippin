@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Section } from '../../components/Utils/Utils'
 import './HomePage.css'
-import ButtonLink from '../../components/ButtonLink/ButtonLink'
+import { Link } from 'react-router-dom'
 
 export default class HomePage extends Component {
     renderCards() {
@@ -27,17 +27,17 @@ export default class HomePage extends Component {
                 <div className="cards">
                     {this.renderCards()}
                 </div>
-                <ButtonLink
+                <Link
                     className='homeButtons'
                     to='/login'>
                         Log in!
-                </ButtonLink>
+                </Link>
                 <p>Not yet a member?</p>
-                <ButtonLink
+                <Link
                     className='homeButtons'
                     to='/register'>
                         Create an account
-                </ButtonLink>
+                </Link>
             </div>
         ) 
     }
