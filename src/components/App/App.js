@@ -85,9 +85,11 @@ export default class App extends Component {
         <main
           className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
-          {/* <SearchBar */}
-            {/* locations={this.state.locations} */}
-            {/* changeHandler={selected => this.setSelected(selected)} /> */}
+          { TokenService.hasAuthToken()
+            ? <SearchBar
+                locations={this.state.locations}
+                changeHandler={selected => this.setSelected(selected)} />
+            : null}
           <Switch>
             <PublicOnlyRoute
               exact
@@ -105,37 +107,27 @@ export default class App extends Component {
             <PrivateRoute
               locations={this.state.locations}
               changeHandler={selected => this.setSelected(selected)}
-              path={'/user'}
+              path={'/home'}
               component={AccountPage}
             />
             <PrivateRoute
-              locations={this.state.locations}
-              changeHandler={selected => this.setSelected(selected)}
               path={'/myPhotos'}
               component={MyPhotosPage}
             />
             <PrivateRoute
-              locations={this.state.locations}
-              changeHandler={selected => this.setSelected(selected)}
               path={'/location'}
               component={() => <LocationPage selected={this.state.selected} />}
             />
             <PrivateRoute
-              locations={this.state.locations}
-              changeHandler={selected => this.setSelected(selected)}
               exact
               path={'/photo/:photoId'}
               component={PhotoPage}
             />
             <PrivateRoute
-              locations={this.state.locations}
-              changeHandler={selected => this.setSelected(selected)}
               path={'/upload'}
               component={UploadPage}
             />
             <PrivateRoute
-              locations={this.state.locations}
-              changeHandler={selected => this.setSelected(selected)}
               path={'/photo/:photoId/edit'}
               component={EditPage}
             />

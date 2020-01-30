@@ -14,7 +14,7 @@ class LoginPage extends Component {
 
     handleLoginSuccess = () => { 
         this.props.changeState()
-        this.props.history.push('/user')
+        this.props.history.push('/home')
     }
     
     render() {

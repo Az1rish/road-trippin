@@ -18,7 +18,7 @@ export default class Nav extends Component {
             <div className='Header__title-link'>
                 {this.props.isAuthenticated
                     ?   <Link
-                            to='/user'>
+                            to='/home'>
                                 Road Trippin'
                         </Link>
                     :   <Link
