@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { Section } from '../../components/Utils/Utils'
 import UploadForm from '../../components/UploadForm/UploadForm'
 import './UploadPage.css'
 
-export default class UploadPage extends Component {
+class UploadPage extends Component {
     static defaultProps = {
         location: {},
         history: {
@@ -19,8 +20,12 @@ export default class UploadPage extends Component {
         return (
             <Section className='uploadPage'>
                 <h2>Add a photo</h2>
-                <UploadForm onUploadSuccess={this.onUploadSuccess} />
+                <UploadForm
+                    onUploadSuccess={this.onUploadSuccess}
+                    addLocation={this.props.addLocation} />
             </Section>
         )
     }
 }
+
+export default withRouter(UploadPage)

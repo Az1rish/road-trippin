@@ -35,6 +35,10 @@ export default class App extends Component {
   static contextType = AuthContext
 
   componentDidMount() {
+    this.setLocations()
+  }
+
+  setLocations = () => {
     return fetch(`${config.API_ENDPOINT}/photos`, {
       headers: {
       },
@@ -69,6 +73,12 @@ export default class App extends Component {
       isAuthenticated: TokenService.hasAuthToken()
     })
   }
+
+  // addLocation = (newLocation) => {
+    // this.setState({
+      // locations: [this.state.locations, newLocation]
+    // })
+  // }
 
   static getDerivedStateFromError(error) {
     return { hasError: true }
@@ -125,11 +135,11 @@ export default class App extends Component {
             />
             <PrivateRoute
               path={'/upload'}
-              component={UploadPage}
+              component={() => <UploadPage addLocation={this.setLocations} />}
             />
             <PrivateRoute
               path={'/photo/:photoId/edit'}
-              component={EditPage}
+              component={() => <EditPage onEditSuccess={this.setLocations} />}
             />
             <Route
               component={NotFoundPage}

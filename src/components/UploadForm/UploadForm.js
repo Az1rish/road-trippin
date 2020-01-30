@@ -10,15 +10,15 @@ export default class UploadForm extends Component {
 
     state = {
         error: null,
-        selectedFile: null,
+        // selectedFile: null,
     }
 
-    fileSelectedHandler = ev => {
-        this.setState({
-            selectedFile: ev.target.files[0]
-        })
+    // fileSelectedHandler = ev => {
+        // this.setState({
+            // selectedFile: ev.target.files[0]
+        // })
         
-    }
+    // }
 
     handleSubmit = ev => {
         ev.preventDefault()
@@ -37,6 +37,7 @@ export default class UploadForm extends Component {
                 description.value = ''
                 this.props.onUploadSuccess()
             })
+            .then(this.props.addLocation)
             .catch(res => {
                 this.setState({ error: res.error })
             })
@@ -60,8 +61,8 @@ export default class UploadForm extends Component {
                         name='image'
                         type='file'
                         required
-                        id='UploadForm__image'
-                        onChange={this.fileSelectedHandler}>
+                        id='UploadForm__image'>
+                        {/* onChange={this.fileSelectedHandler}> */}
                     </Input>
                 </div>
                 <div className='title'>
