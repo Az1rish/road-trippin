@@ -29,6 +29,13 @@ p, h2 {
   color: white;
 }
 
+label {
+  font-size: 25px;
+  margin: 10px;
+  display: block;
+  text-align: left;
+}
+
 .blue {
   color: #477ACC;
 }
