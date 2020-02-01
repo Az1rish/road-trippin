@@ -34,6 +34,10 @@ export default class Nav extends Component {
         return (
             <div className='Header__not-logged-in'>
                 <Link
+                    to='/'>
+                    Home
+                </Link>
+                <Link
                     to='/register'>
                     Register
                 </Link>
@@ -48,7 +52,10 @@ export default class Nav extends Component {
     renderLogoutLink() {
         return (
             <div className='Header__logged-in'>
-                
+                <Link
+                    to='/home'>
+                    Home
+                </Link>
                 <Link
                     to='/upload'>
                     Add Photo
