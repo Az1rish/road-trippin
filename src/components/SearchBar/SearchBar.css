@@ -1,3 +1,18 @@
 .location_selector {
-    padding-top: 90px;
+    padding-top: 80px;
 }
+
+.location_selector label {
+    text-align: center;
+}
+
+#location {
+    border: 1px solid #ddd;
+    display: block;
+    font-size: 1.1em;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: left;
+    width: 80%;
+    border-radius: 15px;
+  }
