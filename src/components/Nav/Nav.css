@@ -14,16 +14,13 @@
     ;
   }
 
-  .Header__buttons {
-    display: flex;
-    justify-content: right;
-    width: 100%;
-  }
+  
   
   .Header h1 {
     margin: 5px 0;
     vertical-align: middle;
     width: 100%;
+    font-weight: 600;
   }
   
   .Header a {
@@ -46,9 +43,9 @@
   
   .Header__not-logged-in, .Header__logged-in {
     display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: flex-end;
+    /* flex: 1; */
+    /* align-items: center; */
+    /* justify-content: flex-end; */
   }
   
   .Header__not-logged-in a, .Header__logged-in a {
@@ -63,6 +60,12 @@
   @media screen and (min-width: 450px) {
     .Header h1 {
       font-size: 22pt;
+    }
+
+    .Header__buttons {
+      display: flex;
+      justify-content: right;
+      width: 100%;
     }
   }
   

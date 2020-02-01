@@ -3,29 +3,48 @@
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .card {
     min-height: 200px;
     padding: 6% 0;
     background-color: #4569cc;
-    height: 200px;
-    width: 42%;
+    height: 260px;
+    width: 75%;
     margin: 2%;
-    border-radius: 70px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.card p {
+    font-size: 25px;
+    margin: 30px;
 }
 
 .homePage {
     margin: 50px 5px;
+    padding-top: 20px;
+}
+
+.homePage h2 {
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
 }
 
 .homePage a {
     background:#525e80;
     color: white;
-    padding: 6px 15px;
-    border-radius: 15px;
+    padding: 10px 25px;
+    border-radius: 25px;
     margin-left: 5px;
     margin-right: 5px;
     text-decoration: none;
+    font-size: 18px;
+}
+
+.question {
+    font-size: 20px;
+    margin: 25px;
 }

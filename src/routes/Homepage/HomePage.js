@@ -23,7 +23,7 @@ export default class HomePage extends Component {
     render() {
         return (
             <div className='homePage'>
-                <h2>Helping everyone see the world</h2>
+                <h2>Share the world!</h2>
                 <div className="cards">
                     {this.renderCards()}
                 </div>
@@ -32,7 +32,7 @@ export default class HomePage extends Component {
                     to='/login'>
                         Log in!
                 </Link>
-                <p>Not yet a member?</p>
+                <p className='question'>Not yet a member?</p>
                 <Link
                     className='homeButtons'
                     to='/register'>
