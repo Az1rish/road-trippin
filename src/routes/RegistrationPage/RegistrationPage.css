@@ -1,9 +1,10 @@
 .RegistrationPage {
-    padding-top: 100px;
+    padding-top: 55px;
     color: white;
-    height: 100vh;
+    height: 93vh;
 }
 
 .RegistrationPage h2 {
     color: white;
+    font-size: 35px;
 }

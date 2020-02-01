@@ -28,11 +28,11 @@
     border: 1px solid #555;
     background:#525e80;
     color: white;
-    padding: 6px 15px;
-    border-radius: 15px;
+    padding: 10px 25px;
+    border-radius: 25px;
     margin-left: 5px;
     margin-right: 5px;
-    font-size: 1.05rem;
+    font-size: 18px;
   }
   
   .Required {

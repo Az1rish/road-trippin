@@ -20,6 +20,11 @@ h1, h3, h4, h5, h6 {
   color: #222;
 }
 
+h2 {
+  font-size: 40px;
+  font-family: 'Fredoka One', cursive;
+}
+
 p, h2 {
   color: white;
 }

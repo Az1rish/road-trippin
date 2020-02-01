@@ -14,3 +14,10 @@
 .instruction {
     font-size: small;
 }
+
+.RegistrationForm label {
+    font-size: 25px;
+    margin: 10px;
+    display: block;
+    text-align: left;
+}
