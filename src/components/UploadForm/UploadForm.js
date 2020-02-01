@@ -56,6 +56,7 @@ export default class UploadForm extends Component {
                 <div className='image'>
                     <label htmlFor='UploadForm__image'>
                         Choose Photo <Required />
+                        <p className='instruction'>Must be 4MB or less</p>
                     </label>
                     <Input
                         name='image'
