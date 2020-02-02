@@ -13,8 +13,6 @@
     z-index: 99
     ;
   }
-
-  
   
   .Header h1 {
     margin: 5px 0;
@@ -64,7 +62,7 @@
 
     .Header__buttons {
       display: flex;
-      justify-content: right;
+      justify-content: center;
       width: 100%;
     }
   }

@@ -8,3 +8,10 @@
     color: white;
     font-size: 35px;
 }
+
+@media (min-width: 450px) {
+    .RegistrationPage {
+        height: inherit;
+        padding-bottom: 10px;
+    }
+}
