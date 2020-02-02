@@ -1,8 +1,9 @@
-.RegistrationPage {
-    padding-top: 55px;
-    color: white;
-    height: 93vh;
-}
+/* .RegistrationPage { */
+    /* padding-top: 55px; */
+    /* color: white; */
+    /* min-height: 96vh; */
+    /* padding-bottom: 10px; */
+/* } */
 
 .RegistrationPage h2 {
     color: white;
@@ -10,8 +11,8 @@
 }
 
 @media (min-width: 450px) {
-    .RegistrationPage {
-        height: inherit;
-        padding-bottom: 10px;
-    }
+    /* .RegistrationPage { */
+        /* height: inherit; */
+        
+    /* } */
 }

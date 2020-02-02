@@ -44,8 +44,10 @@
   .Section {
     margin-left: 20px;
     margin-right: 20px;
-    padding-top: 20px;
+    padding-top: 55px;
+    padding-bottom: 10px;
     color: white;
+    min-height: 96vh;
     height: 100%;
   }
   .Section--list {
