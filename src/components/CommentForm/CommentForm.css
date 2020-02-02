@@ -7,4 +7,10 @@
     margin: 10px 10px 20px;
     margin-left: 0;
   }
+
+  #rating {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+  }
   
