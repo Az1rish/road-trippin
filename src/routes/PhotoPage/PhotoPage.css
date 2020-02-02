@@ -82,3 +82,9 @@
   .PhotoPage__location {
     font-size: 35px;
   }
+
+  @media (min-width: 800px) {
+    .PhotoPage__image {
+      height: 50vw;
+    }
+  }
