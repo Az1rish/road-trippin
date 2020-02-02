@@ -7,3 +7,11 @@
 .LoginPage h2 {
     color: white;
 }
+
+@media (min-width: 450px) {
+    .LoginPage {
+        height: inherit;
+        padding-bottom: 10px;
+        padding-top: 50px;
+    }
+}
