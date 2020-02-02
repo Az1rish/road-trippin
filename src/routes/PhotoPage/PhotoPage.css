@@ -1,3 +1,7 @@
+.PhotoPage {
+  padding-top: 100px;
+}
+
 .PhotoPage__editLink {
   background:#525e80;
   color: white;

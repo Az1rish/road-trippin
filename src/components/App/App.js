@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import SearchBar from '../SearchBar/SearchBar'
 import Footer from '../Footer/Footer'
@@ -20,7 +20,7 @@ import TokenService from '../../services/token-service'
 import AuthContext from '../../contexts/AuthContext'
 import './App.css'
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -93,6 +93,7 @@ export default class App extends Component {
   }
 
   render() {
+    // console.log(this.props.path)
     return (
       <div className='App'>
         <header className='App__navBar'>
@@ -103,7 +104,8 @@ export default class App extends Component {
         <main
           className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
-          { this.shouldRenderSearchBar(path)
+          { console.log(this.props.location.pathname)  } 
+          {this.shouldRenderSearchBar(this.props.location.pathname)
             ? <SearchBar
                 locations={this.state.locations}
                 changeHandler={selected => this.setSelected(selected)} />
@@ -159,3 +161,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default withRouter(App)
