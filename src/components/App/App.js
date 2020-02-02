@@ -84,6 +84,14 @@ export default class App extends Component {
     return { hasError: true }
   } 
 
+  shouldRenderSearchBar = (path) => {
+    if (TokenService.hasAuthToken() && (path === '/home' || path === '/myPhotos' || path === '/location')) {
+      return true 
+    } else {
+      return false
+    }
+  }
+
   render() {
     return (
       <div className='App'>
@@ -95,7 +103,7 @@ export default class App extends Component {
         <main
           className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
-          { TokenService.hasAuthToken()
+          { this.shouldRenderSearchBar(path)
             ? <SearchBar
                 locations={this.state.locations}
                 changeHandler={selected => this.setSelected(selected)} />

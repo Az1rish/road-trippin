@@ -9,6 +9,8 @@ const PhotoContext = React.createContext({
     photo: nullPhoto,
     comments: [],
     error: null,
+    user: {},
+    setUser: () => {},
     setError: () => {},
     clearError: () => {},
     setPhoto: () => {},
@@ -24,7 +26,12 @@ export class PhotoProvider extends Component {
     state = {
         photo: nullPhoto,
         error: null,
+        user: {},
     };
+
+    setUser = user => {
+        this.setState({ user })
+    }
 
     setError = error => {
         console.error(error)

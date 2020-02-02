@@ -9,17 +9,21 @@ import CommentForm from '../../components/CommentForm/CommentForm'
 import { format } from 'date-fns'
 import './PhotoPage.css'
 
+// let user;
+
 export default class PhotoPage extends Component {
     static defaultProps = {
         match: { params: {} },
     }
 
     static contextType = PhotoContext
-
     
     componentDidMount() {
         const { photoId } = this.props.match.params
         this.context.clearError()
+        PhotoApiService.getPhoto(photoId)
+            .then(res => {
+                console.log(res)})
         PhotoApiService.getPhoto(photoId)
             .then(this.context.setPhoto)
             .catch(this.context.setError)
@@ -33,6 +37,7 @@ export default class PhotoPage extends Component {
     }
 
     renderPhoto() {
+        // console.log(user)
         const { photo, comments } = this.context
         
         return <>
