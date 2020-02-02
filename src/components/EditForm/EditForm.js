@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import { withRouter } from 'react-router-dom'
+import './EditForm.css'
 
 class EditForm extends Component {
     static propTypes = {
@@ -148,23 +149,25 @@ class EditForm extends Component {
                     <label htmlFor='description'>
                         Description
                     </label>
+
                     <textarea
                         name='description'
                         id='description'
+                        className='Textarea'
                         value={description}
                         onChange={this.handleChangeDescription}
                     />
                 </div>
                 <div>
-                    <label htmlFor='location'>
+                    <label htmlFor='locationEdit'>
                         Location
                         {' '}
                         <Required />
                     </label>
                     <Input
                         type='text'
-                        name='location'
-                        id='location'
+                        name='locationEdit'
+                        id='locationEdit'
                         required
                         value={location}
                         onChange={this.handleChangeLocation}
