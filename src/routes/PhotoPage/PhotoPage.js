@@ -12,6 +12,9 @@ import './PhotoPage.css'
 // let user;
 
 export default class PhotoPage extends Component {
+    state = {
+        photoUser: {},
+    }
     static defaultProps = {
         match: { params: {} },
     }
@@ -19,11 +22,16 @@ export default class PhotoPage extends Component {
     static contextType = PhotoContext
     
     componentDidMount() {
+        let photoUser
         const { photoId } = this.props.match.params
         this.context.clearError()
         PhotoApiService.getPhoto(photoId)
             .then(res => {
-                console.log(res)})
+                console.log(res)
+                photoUser = res.user})
+            .then(this.setState({
+                photoUser
+            }))
         PhotoApiService.getPhoto(photoId)
             .then(this.context.setPhoto)
             .catch(this.context.setError)
@@ -37,7 +45,7 @@ export default class PhotoPage extends Component {
     }
 
     renderPhoto() {
-        // console.log(user)
+        console.log(this.state.photoUser)
         const { photo, comments } = this.context
         
         return <>

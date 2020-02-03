@@ -104,7 +104,7 @@ class App extends Component {
         <main
           className='App__main'>
           {this.state.hasError && <p className='red'>I'm sorry, it appears there is an error.</p>}
-          { console.log(this.props.location.pathname)  } 
+          {/* { console.log(this.props.location.pathname)  }  */}
           {this.shouldRenderSearchBar(this.props.location.pathname)
             ? <SearchBar
                 locations={this.state.locations}
