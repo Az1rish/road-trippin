@@ -110,7 +110,7 @@ class App extends Component {
             />
             <PublicOnlyRoute
               path={'/login'}
-              component={() => <LoginPage changeState={this.changeState} />}
+              component={LoginPage}
             />
             <PublicOnlyRoute
               path={'/register'}

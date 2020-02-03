@@ -18,7 +18,7 @@ export default class LoginForm extends Component {
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
-        this.setState({ error: null })
+        // this.setState({ error: null })
         const { user_name, password } = ev.target
 
         AuthApiService.postLogin({
@@ -36,12 +36,12 @@ export default class LoginForm extends Component {
             })
 
 
-            .then(res => {
-                user_name.value = ''
-                password.value = ''
-                TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
-            })
+            // .then(res => {
+                // user_name.value = ''
+                // password.value = ''
+                // TokenService.saveAuthToken(res.authToken)
+                // this.props.onLoginSuccess()
+            // })
             .catch(res => {
                 this.setState({ error: res.error })
             })
