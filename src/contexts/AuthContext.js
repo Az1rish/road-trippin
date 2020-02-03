@@ -18,6 +18,7 @@ export class AuthProvider extends Component {
     }
 
     setUser = user => {
+        localStorage.setItem('user', user)
         this.setState({
             user
         })

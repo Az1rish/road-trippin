@@ -74,12 +74,6 @@ class App extends Component {
     })
   }
 
-  // addLocation = (newLocation) => {
-    // this.setState({
-      // locations: [this.state.locations, newLocation]
-    // })
-  // }
-
   static getDerivedStateFromError(error) {
     return { hasError: true }
   } 
@@ -93,7 +87,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.props.path)
     return (
       <div className='App'>
         <header className='App__navBar'>

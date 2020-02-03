@@ -9,8 +9,6 @@ import CommentForm from '../../components/CommentForm/CommentForm'
 import { format } from 'date-fns'
 import './PhotoPage.css'
 
-// let user;
-
 export default class PhotoPage extends Component {
     state = {
         photoUser: {},
@@ -22,16 +20,13 @@ export default class PhotoPage extends Component {
     static contextType = PhotoContext
     
     componentDidMount() {
-        let photoUser
         const { photoId } = this.props.match.params
         this.context.clearError()
         PhotoApiService.getPhoto(photoId)
             .then(res => {
-                console.log(res)
-                photoUser = res.user})
-            .then(this.setState({
-                photoUser
-            }))
+                this.setState({
+                    photoUser: res.user
+                })})   
         PhotoApiService.getPhoto(photoId)
             .then(this.context.setPhoto)
             .catch(this.context.setError)
@@ -44,18 +39,28 @@ export default class PhotoPage extends Component {
         this.context.clearPhoto()
     }
 
+    getUser = () => {
+        let user = localStorage.getItem('user')
+        return {
+            user: user
+        }
+    }
+
     renderPhoto() {
-        console.log(this.state.photoUser)
         const { photo, comments } = this.context
         
-        return <>
-            <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
-            <h2>{photo.title}</h2>
-            <PhotoDescription photo={photo} />
-            <Link to={`/photo/${photo.id}/edit`} className='PhotoPage__editLink'>Edit Photo</Link>
-            <PhotoComments comments={comments} />
-            <CommentForm />
-        </>
+        return (
+            <>
+                <div className='PhotoPage__image' style={{backgroundImage: `url(${photo.image})`}} />
+                <h2>{photo.title}</h2>
+                <PhotoDescription photo={photo} />
+                {(this.getUser().user === this.state.photoUser.user_name)
+                    ? <Link to={`/photo/${photo.id}/edit`} className='PhotoPage__editLink'>Edit Photo</Link>
+                    : null}
+                <PhotoComments comments={comments} />
+                <CommentForm />
+            </>
+        )
     }
 
     render() {
@@ -94,7 +99,6 @@ function PhotoDescription ({ photo }) {
             <p>
                 Posted by {photo.user.full_name} on {format(postTime, "PPPP")}
             </p>
-            
         </div>
     )
 }
