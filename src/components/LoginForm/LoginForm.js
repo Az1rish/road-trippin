@@ -16,19 +16,6 @@ export default class LoginForm extends Component {
         error: null,
     }
 
-    handleSubmitBasicAuth = ev => {
-        ev.preventDefault()
-        const { user_name, password } = ev.target
-
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(user_name.value, password.value)
-        )
-
-        user_name.value = ''
-        password.value = ''
-        this.props.onLoginSuccess()
-    }
-
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
         this.setState({ error: null })

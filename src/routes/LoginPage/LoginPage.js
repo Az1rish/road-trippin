@@ -13,7 +13,7 @@ class LoginPage extends Component {
     }
 
     handleLoginSuccess = () => { 
-        this.props.changeState()
+        // this.props.changeState()
         this.props.history.push('/home')
     }
     
