@@ -51,7 +51,6 @@ class EditForm extends Component {
                 })
             })
             .catch(error => {
-                console.log(error)
                 this.setState({ error })
             })
     }
@@ -119,7 +118,6 @@ class EditForm extends Component {
 
     render() {
         const { title, description, location, error } = this.state
-        // console.log(this.state)
         return (    
             <form
                 className='EditPhoto__form'

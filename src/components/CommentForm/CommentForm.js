@@ -11,7 +11,6 @@ export default class CommentForm extends Component {
         ev.preventDefault()
         const { photo } = this.context
         const { text, rating } = ev.target
-        console.log(`Photo is ${photo}`)
 
         PhotoApiService.postComment(photo.id, text.value, Number(rating.value))
             .then(this.context.addComment)

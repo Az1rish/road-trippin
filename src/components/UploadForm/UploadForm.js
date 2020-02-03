@@ -10,15 +10,7 @@ export default class UploadForm extends Component {
 
     state = {
         error: null,
-        // selectedFile: null,
     }
-
-    // fileSelectedHandler = ev => {
-        // this.setState({
-            // selectedFile: ev.target.files[0]
-        // })
-        
-    // }
 
     handleSubmit = ev => {
         ev.preventDefault()
@@ -63,7 +55,6 @@ export default class UploadForm extends Component {
                         type='file'
                         required
                         id='UploadForm__image'>
-                        {/* onChange={this.fileSelectedHandler}> */}
                     </Input>
                 </div>
                 <div className='title'>

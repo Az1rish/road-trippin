@@ -9,6 +9,7 @@ export default class Nav extends Component {
 
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        localStorage.removeItem('user')
         this.props.changeState()
     }
 

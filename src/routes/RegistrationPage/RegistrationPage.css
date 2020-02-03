@@ -1,18 +1,4 @@
-/* .RegistrationPage { */
-    /* padding-top: 55px; */
-    /* color: white; */
-    /* min-height: 96vh; */
-    /* padding-bottom: 10px; */
-/* } */
-
 .RegistrationPage h2 {
     color: white;
     font-size: 35px;
-}
-
-@media (min-width: 450px) {
-    /* .RegistrationPage { */
-        /* height: inherit; */
-        
-    /* } */
 }

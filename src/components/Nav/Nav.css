@@ -10,8 +10,7 @@
     top: 0;
     width: 100%;
     flex-direction: column;
-    z-index: 99
-    ;
+    z-index: 99;
   }
   
   .Header h1 {
@@ -41,9 +40,6 @@
   
   .Header__not-logged-in, .Header__logged-in {
     display: flex;
-    /* flex: 1; */
-    /* align-items: center; */
-    /* justify-content: flex-end; */
   }
   
   .Header__not-logged-in a, .Header__logged-in a {
