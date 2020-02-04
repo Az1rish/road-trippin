@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Input, Button, Required } from '../Utils/Utils'
-import PhotoContext from '../../contexts/PhotoContext'
 import PropTypes from 'prop-types'
 import config from '../../config'
 import TokenService from '../../services/token-service'
@@ -16,8 +15,6 @@ class EditForm extends Component {
             push: PropTypes.func,
         }).isRequired,
     };
-
-    static contextType = PhotoContext;
 
     state = {
         error: null,
@@ -93,12 +90,9 @@ class EditForm extends Component {
                         throw error 
                     })
             })
-            // .then(() =>
-                // this.props.onEditSuccess())
             .then(() => {
                 this.resetFields(newPhoto)
-                this.context.updatePhoto(newPhoto)
-                // this.props.onEditSuccess()
+                this.props.onEditSuccess()
                 this.props.history.push('/myPhotos')
             })
             .catch(res => {

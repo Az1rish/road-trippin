@@ -13,8 +13,10 @@
   font-size: 18px;
 }
 .PhotoPage__image {
-    height: 100vw;
-    min-height: 150px;
+    height: 55vw;
+    margin: auto;
+    width: 92vw;
+    /* min-height: 150px; */
     background-size: cover;
     background-position: 50% 50%;
     border-radius: 10px 10px 0 0;

@@ -62,7 +62,14 @@ export class PhotoProvider extends Component {
         ])
     }
 
-    updatePhoto = () => {};
+    updatePhoto = photo => {
+        this.setState({
+            id: photo.id,
+            title: photo.title,
+            description: photo.description,
+            location: photo.location
+        })
+    };
 
     
 
