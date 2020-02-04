@@ -69,7 +69,7 @@ class EditForm extends Component {
 
     handleError = (error) =>  {
         this.setState({
-            error
+            error: error,
         })
     }
     
@@ -93,9 +93,12 @@ class EditForm extends Component {
                         throw error 
                     })
             })
+            // .then(() =>
+                // this.props.onEditSuccess())
             .then(() => {
                 this.resetFields(newPhoto)
                 this.context.updatePhoto(newPhoto)
+                // this.props.onEditSuccess()
                 this.props.history.push('/myPhotos')
             })
             .catch(res => {

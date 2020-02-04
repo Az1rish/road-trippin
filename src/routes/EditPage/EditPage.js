@@ -32,6 +32,7 @@ class EditPage extends Component {
 
     handleEditSuccess = () => { 
         this.props.changeState()
+        this.props.onEditSuccess()
         this.props.history.push('/myPhotos')
     }
 
