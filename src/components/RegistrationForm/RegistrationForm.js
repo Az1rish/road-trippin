@@ -12,6 +12,7 @@ export default class RegistrationForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
+        
         const { full_name, user_name, password } = ev.target
 
         this.setState({ error:null })
@@ -53,7 +54,7 @@ export default class RegistrationForm extends Component {
                     </Input>
                 </div>
                 <div className='user_name'>
-                    <label                          htmlFor='RegistrationForm__user_name'>
+                    <label htmlFor='RegistrationForm__user_name'>
                         User name <Required />
                     </label>
                     <Input
@@ -75,7 +76,7 @@ export default class RegistrationForm extends Component {
                         id='RegistrationForm__password'>
                     </Input>
                     <p className='instruction'>(must be at least 8 characters long, have no spaces and contain one or more of each: upper case letter, lower case letter, number and special characters)
-                        </p>
+                    </p>
                 </div>
                 <Button type='submit'>
                     Register
