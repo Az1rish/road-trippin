@@ -71,7 +71,6 @@ class EditPage extends Component {
                     this.props.history.push('/myPhotos')
                 })
                 .catch(res => {
-                    console.log(res)
                     handleError(res.error.message)
                 })
               
