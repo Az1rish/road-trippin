@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function PhotoStarRating({ rating }) {
+export function PhotoStarRating({ rating }) {
   const stars = [
     { filled: false },
     { filled: false },
@@ -24,7 +25,7 @@ export default function PhotoStarRating({ rating }) {
   );
 }
 
-function Star({ filled }) {
+export function Star({ filled }) {
   const library = filled ? 'fas' : 'far';
   return <FontAwesomeIcon className="blue" icon={[library, 'star']} />;
 }

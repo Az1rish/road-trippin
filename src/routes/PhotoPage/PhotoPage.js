@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
@@ -7,7 +8,7 @@ import { format } from 'date-fns';
 import PhotoContext from '../../contexts/PhotoContext';
 import PhotoApiService from '../../services/photo-api-service';
 import { Hyph, Section } from '../../components/Utils/Utils';
-import PhotoStarRating from '../../components/PhotoStarRating/PhotoStarRating';
+import { PhotoStarRating } from '../../components/PhotoStarRating/PhotoStarRating';
 import CommentForm from '../../components/CommentForm/CommentForm';
 import './PhotoPage.css';
 
@@ -68,7 +69,7 @@ export default class PhotoPage extends Component {
           <h2>{photo.title}</h2>
           <PhotoDescription photo={photo} />
           {(this.getUser().user === photoUser.user_name)
-            ? <Link to={`/photo/${photo.id}/edit`} className="PhotoPage__editLink">Edit Photo</Link>
+            ? <Link to={`/photo/${photo.id}/edit`} className="PhotoPage__editLink">Edit or Delete Photo</Link>
             : null}
           <PhotoComments comments={comments} />
           <CommentForm />
@@ -115,6 +116,7 @@ function PhotoDescription({ photo }) {
         {photo.user.full_name}
         {' '}
         on
+        {' '}
         {format(postTime, 'PPPP')}
       </p>
     </div>

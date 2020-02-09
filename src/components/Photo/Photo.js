@@ -53,6 +53,7 @@ export default function Photo(props) {
             {photo.user.full_name}
             {' '}
             on
+            {' '}
             {format(postTime, 'PPPP')}
           </p>
         </div>
