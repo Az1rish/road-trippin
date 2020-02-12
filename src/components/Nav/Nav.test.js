@@ -1,13 +1,16 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import UploadForm from './../components/UploadForm/UploadForm';
+import Nav from './Nav';
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-  <BrowserRouter>
-    <UploadForm />
-  </BrowserRouter>, div);
+    <BrowserRouter>
+      <Nav />
+    </BrowserRouter>, div
+  );
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/button-has-type */
